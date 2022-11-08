@@ -1,0 +1,10 @@
+citHeader("To cite in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "manyigos",
+  author   = "Hollway, James",
+  year     = "2022",
+  note = "For more information on the qVerse: https://github.com/globalgov/manydata"
+  textVersion = paste("Hollway, James", "manyigos", "2022", sep = ".")
+)
