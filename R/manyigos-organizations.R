@@ -1,10 +1,9 @@
 #' organizations database documentation
 #'
 #' @format The organizations database is a list that contains the
-#' following 1 datasets: COW.
+#' following 2 datasets: COW, VIGO.
 #' For more information and references to each of the datasets used,
 #' please use the `data_source()` and `data_contrast()` functions.
-#' @imports manydata
 #'\describe{
 #' \item{COW: }{A dataset with 16139 observations and the following
 #' 235 variables: igoID, Label, Beg, End, Year, afghanistan, albania, algeria,
@@ -39,6 +38,11 @@
 #' zanzibar, zimbabwe, orgname, dead, integrated, replaced, ionum, igocode,
 #' version, accuracyofpre1965membershipdates, sourcesandnotes, imputed,
 #' political, social, economic.}
+#' \item{VIGO: }{A dataset with 1662 observations and the following
+#' 26 variables: igoID, Label, Beg, Year, vitality, zombie, life, dead,
+#' numb_mids_sum, mccall, pr_integration, aut3, s3un, Europe, LAmerica,
+#' MENA, Asia, NAmCarib, Africa, compdummy, age, competition, hardrel, itrans,
+#' desec5f, lngdpsum1.}
 #' }
 #'
 #' @details
