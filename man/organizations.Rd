@@ -6,7 +6,7 @@
 \title{organizations database documentation}
 \format{
 The organizations database is a list that contains the
-following 2 datasets: COW, VIGO.
+following 5 datasets: COW, VIGO, DIGO, IIGO, TRANSACCESS.
 For more information and references to each of the datasets used,
 please use the \code{data_source()} and \code{data_contrast()} functions.
 }
@@ -289,6 +289,100 @@ organizations database documentation
 #> |    itrans     |  character  |            1662|     0     |       0       |
 #> |    desec5f    |  character  |            1662|     0     |       0       |
 #> |   lngdpsum1   |  character  |            1662|    508    |     30.57     |
+#> ----------------------------------------------------------------------------
+#> 
+#> 
+#> $DIGO
+#> ----------------------------------------------------------------------------------
+#> |     Column Name     |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
+#> ----------------------------------------------------------------------------------
+#> |        igoID        |  character  |             561|     0     |       0       |
+#> |        Label        |  character  |             561|     0     |       0       |
+#> |         Beg         |    mdate    |             561|     0     |       0       |
+#> |         End         |    mdate    |             561|     0     |       0       |
+#> |  Fate/death_reason  |  character  |             561|    349    |     62.21     |
+#> |       region        |  character  |             561|     1     |     0.18      |
+#> |      memb_form      |  character  |             561|     1     |     0.18      |
+#> |   members_censor    |  character  |             561|    12     |     2.14      |
+#> |  Mandate/Function   |  character  |             561|     2     |     0.36      |
+#> |       Living        |  character  |             561|     1     |     0.18      |
+#> |        Scope        |  character  |             561|     2     |     0.36      |
+#> |     function_c      |  character  |             561|     2     |     0.36      |
+#> |       scope_c       |  character  |             561|     2     |     0.36      |
+#> |      region_c       |  character  |             561|     1     |     0.18      |
+#> |      lifespan       |  character  |             561|     1     |     0.18      |
+#> |        event        |  character  |             561|     3     |     0.53      |
+#> |       event_1       |  character  |             561|     4     |     0.71      |
+#> |       life_1        |  character  |             561|     3     |     0.53      |
+#> |         WWI         |  character  |             561|     2     |     0.36      |
+#> |        WWII         |  character  |             561|     1     |     0.18      |
+#> |         WW          |  character  |             561|     1     |     0.18      |
+#> |full_membership_start|  character  |             561|    18     |     3.21      |
+#> |asso_membership_start|  character  |             561|    17     |     3.03      |
+#> |   observer_start    |  character  |             561|    17     |     3.03      |
+#> | missing_data_start  |  character  |             561|    17     |     3.03      |
+#> | full_membership_end |  character  |             561|     1     |     0.18      |
+#> | asso_membership_end |  character  |             561|     1     |     0.18      |
+#> |    observer_end     |  character  |             561|     1     |     0.18      |
+#> |  missing_data_end   |  character  |             561|     1     |     0.18      |
+#> ----------------------------------------------------------------------------------
+#> 
+#> 
+#> $IIGO
+#> -----------------------------------------------------------------------------------------
+#> |        Column Name         |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
+#> -----------------------------------------------------------------------------------------
+#> |           igoID            |  character  |             149|     2     |     1.34      |
+#> |           Label            |  character  |             149|     0     |       0       |
+#> |            Beg             |    mdate    |             149|     0     |       0       |
+#> |            End             |    mdate    |             149|    98     |     65.77     |
+#> |         End_reason         |  character  |             149|     0     |       0       |
+#> |          Regional          |  character  |             149|     0     |       0       |
+#> |            Nbr.            |  character  |             149|     0     |       0       |
+#> |           Domain           |  character  |             149|     3     |     2.01      |
+#> |Nbr State Mbrs 2017 (or end)|  character  |             149|     0     |       0       |
+#> |       Ind. Sec. Year       |  character  |             149|    117    |     78.52     |
+#> |     Formal Treaty Year     |  character  |             149|    134    |     89.93     |
+#> |        Follow-on IO        |  character  |             149|     1     |     0.67      |
+#> -----------------------------------------------------------------------------------------
+#> 
+#> 
+#> $TRANSACCESS
+#> ----------------------------------------------------------------------------
+#> |  Column Name  |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
+#> ----------------------------------------------------------------------------
+#> |     igoID     |  character  |            9007|     0     |       0       |
+#> |     Label     |  character  |            9007|     0     |       0       |
+#> |   igobodyID   |  character  |            9007|     0     |       0       |
+#> |    IGOBody    |  character  |            9007|     0     |       0       |
+#> |      Beg      |    mdate    |            9007|     0     |       0       |
+#> |     Year      |    mdate    |            9007|     0     |       0       |
+#> |    access     |  character  |            9007|     0     |       0       |
+#> |      ID       |  character  |            9007|     0     |       0       |
+#> |     ID_IO     |  character  |            9007|     0     |       0       |
+#> |    ID_Body    |  character  |            9007|     0     |       0       |
+#> |   openbody    |  character  |            9007|     0     |       0       |
+#> | multiple_arr  |  character  |            9007|     0     |       0       |
+#> |    range_1    |  character  |            9007|     0     |       0       |
+#> |    depth_1    |  character  |            9007|     0     |       0       |
+#> | permanence_1  |  character  |            9007|     0     |       0       |
+#> |codification_1 |  character  |            9007|     0     |       0       |
+#> |    range_2    |  character  |            9007|     0     |       0       |
+#> |    depth_2    |  character  |            9007|     0     |       0       |
+#> | permanence_2  |  character  |            9007|     0     |       0       |
+#> |codification_2 |  character  |            9007|     0     |       0       |
+#> |    range_3    |  character  |            9007|     0     |       0       |
+#> |    depth_3    |  character  |            9007|     0     |       0       |
+#> | permanence_3  |  character  |            9007|     0     |       0       |
+#> |codification_3 |  character  |            9007|     0     |       0       |
+#> |    range_4    |  character  |            9007|     0     |       0       |
+#> |    depth_4    |  character  |            9007|     0     |       0       |
+#> | permanence_4  |  character  |            9007|     0     |       0       |
+#> |codification_4 |  character  |            9007|     0     |       0       |
+#> |    range_5    |  character  |            9007|     0     |       0       |
+#> |    depth_5    |  character  |            9007|     0     |       0       |
+#> | permanence_5  |  character  |            9007|     0     |       0       |
+#> |codification_5 |  character  |            9007|     0     |       0       |
 #> ----------------------------------------------------------------------------
 }\if{html}{\out{</div>}}
 }
