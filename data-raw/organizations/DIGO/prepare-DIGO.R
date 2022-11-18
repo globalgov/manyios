@@ -1,7 +1,8 @@
 # DIGO Preparation Script
 
-# <Please add more information about DIGO here 
-# if it is an original dataset.>
+# The Death of International Organizations dataset by Eilstrup-Sangiovanni
+# contains information on IGOs created since 1815 
+# and the different ways some of these have ceased to exist.
 
 # This is a template for importing, cleaning, and exporting data
 # ready for many packages universe.

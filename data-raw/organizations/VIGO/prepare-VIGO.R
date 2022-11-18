@@ -1,8 +1,5 @@
 # VIGO Preparation Script
 
-# <Please add more information about VIGO here 
-# if it is an original dataset.>
-
 # This is a template for importing, cleaning, and exporting data
 # ready for many packages universe.
 
