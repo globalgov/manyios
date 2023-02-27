@@ -18,14 +18,15 @@ DIGO <- readr::read_csv("data-raw/organizations/DIGO/io_dataDID-1.0-RIO.csv")
 # away from issues with ambiguous names down the road.
 DIGO <- as_tibble(DIGO) %>%
   manydata::transmutate(igoID = ioname,
-                        Label = manypkgs::standardise_titles(orgname)) %>%
+                        Title = manypkgs::standardise_titles(orgname)) %>%
   # make sure NAs are correctly coded
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
   manydata::transmutate(Beg = messydates::as_messydate(sdate),
                         End = messydates::as_messydate(ddate)) %>%
+  dplyr::rename(Death = `Fate/death_reason`)
   dplyr::select(-c("...30", "...31", "...32")) %>%
-  dplyr::relocate(igoID, Label, Beg, End, `Fate/death_reason`) %>%
+  dplyr::relocate(igoID, Title, Beg, End, Death) %>%
   dplyr::distinct(.keep_all = TRUE) %>%
   dplyr::arrange(Beg)
 
