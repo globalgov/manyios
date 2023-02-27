@@ -11,45 +11,16 @@ For more information and references to each of the datasets used,
 please use the \code{data_source()} and \code{data_contrast()} functions.
 \describe{
 \item{COW: }{A dataset with 16139 observations and the following
-235 variables: igoID, Label, Beg, End, Year, afghanistan, albania, algeria,
-andorra, angola, antiguabarbuda, argentina, armenia, australia, austria,
-austriahungary, azerbaijan, baden, bahamas, bahrain, bangladesh, barbados,
-bavariaelect, belarus, belgium, belize, benin, bhutan, bolivia, bosnia,
-botswana, brazil, brunei, bulgaria, burkinafaso, burundi, car, cambodia,
-cameroon, canada, capeverde, chad, chile, china, colombia, comoros,
-congobrazz, costarica, croatia, cuba, cyprus, czechrep, czechoslovakia,
-denmark, djibouti, domrepublic, dominica, egermany, etimor, ecuador, egypt,
-elsalvador, eqguinea, eritrea, estonia, ethiopia, fyromacedonia, fiji,
-finland, france, gabon, gambia, georgia, germany, ghana, greece, grenada,
-guatemala, guinea, guineabissau, guyana, haiti, hanover, hesseelect,
-hessegrand, honduras, hungary, iceland, india, indonesia, iran, iraq,
-ireland, israel, italy, ivorycoast, jamaica, japan, jordan, kazakhstan,
-kenya, kiribati, korea, kosovo, kuwait, kyrgyzstan, laos, latvia, lebanon,
-lesotho, liberia, libya, liechtenstein, lithuania, luxembourg, madagascar,
-malawi, malaysia, maldives, mali, malta, marshallis, mauritania, mauritius,
-mecklenburg, mexico, micronesiafs, modena, moldova, monaco, mongolia,
-morocco, montenegro, mozambique, myanmar, namibia, nauru, nepal, netherlands,
-newzealand, nicaragua, niger, nigeria, nokorea, norway, nyemen, oman,
-pakistan, palau, panama, papalstates, papuanewguinea, paraguay, parma, peru,
-philippines, poland, portugal, qatar, romania, russia, rwanda, svietnam,
-syemen, sanmarino, saotome, saudiarabia, saxony, senegal, seychelles,
-sierraleone, singapore, slovakia, slovenia, soafrica, sokorea, sosudan,
-solomonis, somalia, spain, srilanka, stkitts, stlucia, stvincent, sudan,
-suriname, swaziland, sweden, switzerland, syria, taiwan, tajikistan,
-tanzania, thailand, togo, tonga, trinidad, tunisia, turkey, turkmenistan,
-tuscany, tuvalu, twosicilies, uae, uk, usa, uganda, ukraine, uruguay,
-uzbekistan, vanuatu, venezuela, vietnam, wgermany, wsamoa, wurtenburg,
-yemen, yugoslaviaserb, zaire, zambia, zanzibar, zimbabwe, orgname, dead,
-integrated, replaced, ionum, igocode, version,
-accuracyofpre1965membershipdates, sourcesandnotes, imputed, political,
-social, economic.}
+18 variables: igoID, Title, cowigoNR, Beg, End, Year, orgname, dead,
+integrated, replaced, igocode, version, accuracyofpre1965membershipdates,
+sourcesandnotes, imputed, political, social, economic.}
 \item{VIGO: }{A dataset with 1662 observations and the following
-26 variables: igoID, Label, Beg, Year, vitality, zombie, life, dead,
+26 variables: igoID, Title, Beg, Year, vitality, zombie, life, dead,
 numb_mids_sum, mccall, pr_integration, aut3, s3un, Europe, LAmerica, MENA,
 Asia, NAmCarib, Africa, compdummy, age, competition, hardrel, itrans,
 desec5f, lngdpsum1.}
 \item{DIGO: }{A dataset with 561 observations and the following
-29 variables: igoID, Label, Beg, End, Fate/death_reason, region, memb_form,
+29 variables: igoID, Title, Beg, End, Death, region, memb_form,
 members_censor, Mandate/Function, Living, Scope, function_c, scope_c,
 region_c, lifespan, event, event_1, life_1, WWI, WWII, WW,
 full_membership_start, asso_membership_start, observer_start,
@@ -60,7 +31,7 @@ missing_data_end.}
 Nbr State Mbrs 2017 (or end), Ind. Sec. Year, Formal Treaty Year,
 Follow-on IO.}
 \item{TRANSACCESS: }{A dataset with 9007 observations and the following
-32 variables: igoID, Label, igobodyID, IGOBody, Beg, Year, access, ID, ID_IO,
+32 variables: igoID, Title, igobodyID, igoBody, Beg, Year, access, ID, ID_IO,
 ID_Body, openbody, multiple_arr, range_1, depth_1, permanence_1,
 codification_1, range_2, depth_2, permanence_2, codification_2, range_3,
 depth_3, permanence_3, codification_3, range_4, depth_4, permanence_4,
@@ -68,7 +39,7 @@ codification_4, range_5, depth_5, permanence_5, codification_5.}
 \item{YIO: }{A dataset with 75115 observations and the following
 4 variables: Title, Abbreviation, Beg, Country.}
 \item{MIA: }{A dataset with 3961 observations and the following
-54 variables: igoID, Label, COWcode, Beg, Year, initial, end, typeI,
+54 variables: igoID, Title, cowigoNR, Beg, Year, initial, end, typeI,
 contract, DIMENSIONS, delegation, pooling, DS_sum_st, COMPONENTS, delaccess,
 delsuspens, delconstit, delbudget, delcompliance, delpolicy, del_agenda,
 del_final, poolaccess, poolsuspens, poolconstit, poolbudget, poolcompliance,
@@ -91,232 +62,15 @@ organizations database documentation
 #> |          Column Name           |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
 #> ---------------------------------------------------------------------------------------------
 #> |             igoID              |  character  |           16139|     0     |       0       |
-#> |             Label              |  character  |           16139|     0     |       0       |
+#> |             Title              |  character  |           16139|     0     |       0       |
+#> |            cowigoNR            |  character  |           16139|     0     |       0       |
 #> |              Beg               |    mdate    |           16139|     0     |       0       |
 #> |              End               |    mdate    |           16139|   12173   |     75.43     |
 #> |              Year              |    mdate    |           16139|     0     |       0       |
-#> |          afghanistan           |  character  |           16139|    828    |     5.13      |
-#> |            albania             |  character  |           16139|    879    |     5.45      |
-#> |            algeria             |  character  |           16139|   3503    |     21.71     |
-#> |            andorra             |  character  |           16139|   9441    |     58.5      |
-#> |             angola             |  character  |           16139|   5436    |     33.68     |
-#> |         antiguabarbuda         |  character  |           16139|   6602    |     40.91     |
-#> |           argentina            |  character  |           16139|    25     |     0.15      |
-#> |            armenia             |  character  |           16139|   8929    |     55.33     |
-#> |           australia            |  character  |           16139|    862    |     5.34      |
-#> |            austria             |  character  |           16139|   1829    |     11.33     |
-#> |         austriahungary         |  character  |           16139|   14591   |     90.41     |
-#> |           azerbaijan           |  character  |           16139|   8929    |     55.33     |
-#> |             baden              |  character  |           16139|   15335   |     95.02     |
-#> |            bahamas             |  character  |           16139|   5097    |     31.58     |
-#> |            bahrain             |  character  |           16139|   4778    |     29.61     |
-#> |           bangladesh           |  character  |           16139|   4778    |     29.61     |
-#> |            barbados            |  character  |           16139|   4047    |     25.08     |
-#> |          bavariaelect          |  character  |           16139|   15335   |     95.02     |
-#> |            belarus             |  character  |           16139|   8929    |     55.33     |
-#> |            belgium             |  character  |           16139|    201    |     1.25      |
-#> |             belize             |  character  |           16139|   6602    |     40.91     |
-#> |             benin              |  character  |           16139|   3264    |     20.22     |
-#> |             bhutan             |  character  |           16139|   4778    |     29.61     |
-#> |            bolivia             |  character  |           16139|    32     |      0.2      |
-#> |             bosnia             |  character  |           16139|   9182    |     56.89     |
-#> |            botswana            |  character  |           16139|   4047    |     25.08     |
-#> |             brazil             |  character  |           16139|     6     |     0.04      |
-#> |             brunei             |  character  |           16139|   7257    |     44.97     |
-#> |            bulgaria            |  character  |           16139|    509    |     3.15      |
-#> |          burkinafaso           |  character  |           16139|   3264    |     20.22     |
-#> |            burundi             |  character  |           16139|   3503    |     21.71     |
-#> |              car               |  character  |           16139|   3264    |     20.22     |
-#> |            cambodia            |  character  |           16139|   2583    |      16       |
-#> |            cameroon            |  character  |           16139|   3264    |     20.22     |
-#> |             canada             |  character  |           16139|    862    |     5.34      |
-#> |           capeverde            |  character  |           16139|   5436    |     33.68     |
-#> |              chad              |  character  |           16139|   3264    |     20.22     |
-#> |             chile              |  character  |           16139|    23     |     0.14      |
-#> |             china              |  character  |           16139|    48     |      0.3      |
-#> |            colombia            |  character  |           16139|    15     |     0.09      |
-#> |            comoros             |  character  |           16139|   5436    |     33.68     |
-#> |           congobrazz           |  character  |           16139|   3264    |     20.22     |
-#> |           costarica            |  character  |           16139|    862    |     5.34      |
-#> |            croatia             |  character  |           16139|   9182    |     56.89     |
-#> |              cuba              |  character  |           16139|    440    |     2.73      |
-#> |             cyprus             |  character  |           16139|   3264    |     20.22     |
-#> |            czechrep            |  character  |           16139|   9441    |     58.5      |
-#> |         czechoslovakia         |  character  |           16139|   7013    |     43.45     |
-#> |            denmark             |  character  |           16139|    187    |     1.16      |
-#> |            djibouti            |  character  |           16139|   5802    |     35.95     |
-#> |          domrepublic           |  character  |           16139|    511    |     3.17      |
-#> |            dominica            |  character  |           16139|   5995    |     37.15     |
-#> |            egermany            |  character  |           16139|   9410    |     58.31     |
-#> |             etimor             |  character  |           16139|   11915   |     73.83     |
-#> |            ecuador             |  character  |           16139|    38     |     0.24      |
-#> |             egypt              |  character  |           16139|   1562    |     9.68      |
-#> |           elsalvador           |  character  |           16139|    93     |     0.58      |
-#> |            eqguinea            |  character  |           16139|   4331    |     26.84     |
-#> |            eritrea             |  character  |           16139|   9441    |     58.5      |
-#> |            estonia             |  character  |           16139|   7880    |     48.83     |
-#> |            ethiopia            |  character  |           16139|    509    |     3.15      |
-#> |         fyromacedonia          |  character  |           16139|   9441    |     58.5      |
-#> |              fiji              |  character  |           16139|   4623    |     28.64     |
-#> |            finland             |  character  |           16139|    776    |     4.81      |
-#> |             france             |  character  |           16139|    47     |     0.29      |
-#> |             gabon              |  character  |           16139|   3264    |     20.22     |
-#> |             gambia             |  character  |           16139|   3905    |     24.2      |
-#> |            georgia             |  character  |           16139|   8929    |     55.33     |
-#> |            germany             |  character  |           16139|   6589    |     40.83     |
-#> |             ghana              |  character  |           16139|   2950    |     18.28     |
-#> |             greece             |  character  |           16139|    106    |     0.66      |
-#> |            grenada             |  character  |           16139|   5263    |     32.61     |
-#> |           guatemala            |  character  |           16139|    70     |     0.43      |
-#> |             guinea             |  character  |           16139|   3050    |     18.9      |
-#> |          guineabissau          |  character  |           16139|   5263    |     32.61     |
-#> |             guyana             |  character  |           16139|   4047    |     25.08     |
-#> |             haiti              |  character  |           16139|    814    |     5.04      |
-#> |            hanover             |  character  |           16139|   15374   |     95.26     |
-#> |           hesseelect           |  character  |           16139|   15353   |     95.13     |
-#> |           hessegrand           |  character  |           16139|   15349   |     95.11     |
-#> |            honduras            |  character  |           16139|    335    |     2.08      |
-#> |            hungary             |  character  |           16139|    802    |     4.97      |
-#> |            iceland             |  character  |           16139|   1991    |     12.34     |
-#> |             india              |  character  |           16139|   2146    |     13.3      |
-#> |           indonesia            |  character  |           16139|   2266    |     14.04     |
-#> |              iran              |  character  |           16139|    39     |     0.24      |
-#> |              iraq              |  character  |           16139|   1415    |     8.77      |
-#> |            ireland             |  character  |           16139|    943    |     5.84      |
-#> |             israel             |  character  |           16139|   2203    |     13.65     |
-#> |             italy              |  character  |           16139|     0     |       0       |
-#> |           ivorycoast           |  character  |           16139|   3264    |     20.22     |
-#> |            jamaica             |  character  |           16139|   3503    |     21.71     |
-#> |             japan              |  character  |           16139|    455    |     2.82      |
-#> |             jordan             |  character  |           16139|   2090    |     12.95     |
-#> |           kazakhstan           |  character  |           16139|   8929    |     55.33     |
-#> |             kenya              |  character  |           16139|   3631    |     22.5      |
-#> |            kiribati            |  character  |           16139|   11088   |     68.7      |
-#> |             korea              |  character  |           16139|   15135   |     93.78     |
-#> |             kosovo             |  character  |           16139|   13545   |     83.93     |
-#> |             kuwait             |  character  |           16139|   3380    |     20.94     |
-#> |           kyrgyzstan           |  character  |           16139|   8929    |     55.33     |
-#> |              laos              |  character  |           16139|   2583    |      16       |
-#> |             latvia             |  character  |           16139|   7880    |     48.83     |
-#> |            lebanon             |  character  |           16139|   2090    |     12.95     |
-#> |            lesotho             |  character  |           16139|   4047    |     25.08     |
-#> |            liberia             |  character  |           16139|    862    |     5.34      |
-#> |             libya              |  character  |           16139|   2415    |     14.96     |
-#> |         liechtenstein          |  character  |           16139|   8679    |     53.78     |
-#> |           lithuania            |  character  |           16139|   7880    |     48.83     |
-#> |           luxembourg           |  character  |           16139|   1002    |     6.21      |
-#> |           madagascar           |  character  |           16139|   3264    |     20.22     |
-#> |             malawi             |  character  |           16139|   3766    |     23.33     |
-#> |            malaysia            |  character  |           16139|   2950    |     18.28     |
-#> |            maldives            |  character  |           16139|   3905    |     24.2      |
-#> |              mali              |  character  |           16139|   3264    |     20.22     |
-#> |             malta              |  character  |           16139|   3766    |     23.33     |
-#> |           marshallis           |  character  |           16139|   8929    |     55.33     |
-#> |           mauritania           |  character  |           16139|   3264    |     20.22     |
-#> |           mauritius            |  character  |           16139|   4331    |     26.84     |
-#> |          mecklenburg           |  character  |           16139|   15376   |     95.27     |
-#> |             mexico             |  character  |           16139|    15     |     0.09      |
-#> |          micronesiafs          |  character  |           16139|   8929    |     55.33     |
-#> |             modena             |  character  |           16139|   15395   |     95.39     |
-#> |            moldova             |  character  |           16139|   8929    |     55.33     |
-#> |             monaco             |  character  |           16139|   9441    |     58.5      |
-#> |            mongolia            |  character  |           16139|    902    |     5.59      |
-#> |            morocco             |  character  |           16139|   2221    |     13.76     |
-#> |           montenegro           |  character  |           16139|   13003   |     80.57     |
-#> |           mozambique           |  character  |           16139|   5436    |     33.68     |
-#> |            myanmar             |  character  |           16139|   2203    |     13.65     |
-#> |            namibia             |  character  |           16139|   8679    |     53.78     |
-#> |             nauru              |  character  |           16139|   11088   |     68.7      |
-#> |             nepal              |  character  |           16139|    862    |     5.34      |
-#> |          netherlands           |  character  |           16139|    187    |     1.16      |
-#> |           newzealand           |  character  |           16139|    862    |     5.34      |
-#> |           nicaragua            |  character  |           16139|    350    |     2.17      |
-#> |             niger              |  character  |           16139|   3264    |     20.22     |
-#> |            nigeria             |  character  |           16139|   3264    |     20.22     |
-#> |            nokorea             |  character  |           16139|   2203    |     13.65     |
-#> |             norway             |  character  |           16139|    625    |     3.87      |
-#> |             nyemen             |  character  |           16139|   7849    |     48.63     |
-#> |              oman              |  character  |           16139|   4778    |     29.61     |
-#> |            pakistan            |  character  |           16139|   2146    |     13.3      |
-#> |             palau              |  character  |           16139|   9704    |     60.13     |
-#> |             panama             |  character  |           16139|    400    |     2.48      |
-#> |          papalstates           |  character  |           16139|   15369   |     95.23     |
-#> |         papuanewguinea         |  character  |           16139|   5436    |     33.68     |
-#> |            paraguay            |  character  |           16139|    47     |     0.29      |
-#> |             parma              |  character  |           16139|   15404   |     95.45     |
-#> |              peru              |  character  |           16139|    23     |     0.14      |
-#> |          philippines           |  character  |           16139|   2090    |     12.95     |
-#> |             poland             |  character  |           16139|   1035    |     6.41      |
-#> |            portugal            |  character  |           16139|     0     |       0       |
-#> |             qatar              |  character  |           16139|   4778    |     29.61     |
-#> |            romania             |  character  |           16139|    108    |     0.67      |
-#> |             russia             |  character  |           16139|     0     |       0       |
-#> |             rwanda             |  character  |           16139|   3503    |     21.71     |
-#> |            svietnam            |  character  |           16139|   12473   |     77.28     |
-#> |             syemen             |  character  |           16139|   10928   |     67.71     |
-#> |           sanmarino            |  character  |           16139|   9182    |     56.89     |
-#> |            saotome             |  character  |           16139|   5436    |     33.68     |
-#> |          saudiarabia           |  character  |           16139|   1155    |     7.16      |
-#> |             saxony             |  character  |           16139|   15349   |     95.11     |
-#> |            senegal             |  character  |           16139|   3264    |     20.22     |
-#> |           seychelles           |  character  |           16139|   5616    |     34.8      |
-#> |          sierraleone           |  character  |           16139|   3380    |     20.94     |
-#> |           singapore            |  character  |           16139|   3905    |     24.2      |
-#> |            slovakia            |  character  |           16139|   9441    |     58.5      |
-#> |            slovenia            |  character  |           16139|   9182    |     56.89     |
-#> |            soafrica            |  character  |           16139|    862    |     5.34      |
-#> |            sokorea             |  character  |           16139|   2266    |     14.04     |
-#> |            sosudan             |  character  |           16139|   14363   |      89       |
-#> |           solomonis            |  character  |           16139|   5995    |     37.15     |
-#> |            somalia             |  character  |           16139|   3264    |     20.22     |
-#> |             spain              |  character  |           16139|     0     |       0       |
-#> |            srilanka            |  character  |           16139|   2203    |     13.65     |
-#> |            stkitts             |  character  |           16139|   7034    |     43.58     |
-#> |            stlucia             |  character  |           16139|   6191    |     38.36     |
-#> |           stvincent            |  character  |           16139|   6191    |     38.36     |
-#> |             sudan              |  character  |           16139|   2851    |     17.67     |
-#> |            suriname            |  character  |           16139|   5436    |     33.68     |
-#> |           swaziland            |  character  |           16139|   4331    |     26.84     |
-#> |             sweden             |  character  |           16139|     0     |       0       |
-#> |          switzerland           |  character  |           16139|     0     |       0       |
-#> |             syria              |  character  |           16139|   2314    |     14.34     |
-#> |             taiwan             |  character  |           16139|   2266    |     14.04     |
-#> |           tajikistan           |  character  |           16139|   8929    |     55.33     |
-#> |            tanzania            |  character  |           16139|   3380    |     20.94     |
-#> |            thailand            |  character  |           16139|    175    |     1.08      |
-#> |              togo              |  character  |           16139|   3264    |     20.22     |
-#> |             tonga              |  character  |           16139|   11088   |     68.7      |
-#> |            trinidad            |  character  |           16139|   3503    |     21.71     |
-#> |            tunisia             |  character  |           16139|   2728    |     16.9      |
-#> |             turkey             |  character  |           16139|     0     |       0       |
-#> |          turkmenistan          |  character  |           16139|   8929    |     55.33     |
-#> |            tuscany             |  character  |           16139|   15369   |     95.23     |
-#> |             tuvalu             |  character  |           16139|   11366   |     70.43     |
-#> |          twosicilies           |  character  |           16139|   15367   |     95.22     |
-#> |              uae               |  character  |           16139|   4778    |     29.61     |
-#> |               uk               |  character  |           16139|     0     |       0       |
-#> |              usa               |  character  |           16139|     0     |       0       |
-#> |             uganda             |  character  |           16139|   3503    |     21.71     |
-#> |            ukraine             |  character  |           16139|   8929    |     55.33     |
-#> |            uruguay             |  character  |           16139|    132    |     0.82      |
-#> |           uzbekistan           |  character  |           16139|   8929    |     55.33     |
-#> |            vanuatu             |  character  |           16139|   6602    |     40.91     |
-#> |           venezuela            |  character  |           16139|    25     |     0.15      |
-#> |            vietnam             |  character  |           16139|   2670    |     16.54     |
-#> |            wgermany            |  character  |           16139|   9499    |     58.86     |
-#> |             wsamoa             |  character  |           16139|   5616    |     34.8      |
-#> |           wurtenburg           |  character  |           16139|   15335   |     95.02     |
-#> |             yemen              |  character  |           16139|   8679    |     53.78     |
-#> |         yugoslaviaserb         |  character  |           16139|    202    |     1.25      |
-#> |             zaire              |  character  |           16139|   3264    |     20.22     |
-#> |             zambia             |  character  |           16139|   3766    |     23.33     |
-#> |            zanzibar            |  character  |           16139|   15140   |     93.81     |
-#> |            zimbabwe            |  character  |           16139|   3905    |     24.2      |
 #> |            orgname             |  character  |           16139|     0     |       0       |
 #> |              dead              |  character  |           16139|     0     |       0       |
 #> |           integrated           |  character  |           16139|     0     |       0       |
 #> |            replaced            |  character  |           16139|     0     |       0       |
-#> |             ionum              |  character  |           16139|     0     |       0       |
 #> |            igocode             |  character  |           16139|   6967    |     43.17     |
 #> |            version             |  character  |           16139|     0     |       0       |
 #> |accuracyofpre1965membershipdates|  character  |           16139|    159    |     0.99      |
@@ -333,7 +87,7 @@ organizations database documentation
 #> |  Column Name  |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
 #> ----------------------------------------------------------------------------
 #> |     igoID     |  character  |            1662|     0     |       0       |
-#> |     Label     |  character  |            1662|     0     |       0       |
+#> |     Title     |  character  |            1662|     0     |       0       |
 #> |      Beg      |    mdate    |            1662|     0     |       0       |
 #> |     Year      |    mdate    |            1662|     0     |       0       |
 #> |   vitality    |  character  |            1662|     0     |       0       |
@@ -366,10 +120,10 @@ organizations database documentation
 #> |     Column Name     |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
 #> ----------------------------------------------------------------------------------
 #> |        igoID        |  character  |             561|     0     |       0       |
-#> |        Label        |  character  |             561|     0     |       0       |
+#> |        Title        |  character  |             561|     0     |       0       |
 #> |         Beg         |    mdate    |             561|     0     |       0       |
 #> |         End         |    mdate    |             561|     0     |       0       |
-#> |  Fate/death_reason  |  character  |             561|    349    |     62.21     |
+#> |        Death        |  character  |             561|    349    |     62.21     |
 #> |       region        |  character  |             561|     1     |     0.18      |
 #> |      memb_form      |  character  |             561|     1     |     0.18      |
 #> |   members_censor    |  character  |             561|    12     |     2.14      |
@@ -421,9 +175,9 @@ organizations database documentation
 #> |  Column Name  |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
 #> ----------------------------------------------------------------------------
 #> |     igoID     |  character  |            9007|     0     |       0       |
-#> |     Label     |  character  |            9007|     0     |       0       |
+#> |     Title     |  character  |            9007|     0     |       0       |
 #> |   igobodyID   |  character  |            9007|     0     |       0       |
-#> |    IGOBody    |  character  |            9007|     0     |       0       |
+#> |    igoBody    |  character  |            9007|     0     |       0       |
 #> |      Beg      |    mdate    |            9007|     0     |       0       |
 #> |     Year      |    mdate    |            9007|     0     |       0       |
 #> |    access     |  character  |            9007|     0     |       0       |
@@ -471,8 +225,8 @@ organizations database documentation
 #> |  Column Name  |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
 #> ----------------------------------------------------------------------------
 #> |     igoID     |  character  |            3961|     0     |       0       |
-#> |     Label     |  character  |            3961|     0     |       0       |
-#> |    COWcode    |  character  |            3961|     0     |       0       |
+#> |     Title     |  character  |            3961|     0     |       0       |
+#> |   cowigoNR    |  character  |            3961|     0     |       0       |
 #> |      Beg      |    mdate    |            3961|     0     |       0       |
 #> |     Year      |    mdate    |            3961|     0     |       0       |
 #> |    initial    |  character  |            3961|   3884    |     98.06     |
