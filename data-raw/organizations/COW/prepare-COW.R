@@ -20,8 +20,9 @@ COW <- as_tibble(COW) %>%
                         Beg = messydates::as_messydate(as.character(sdate)),
                         End = messydates::as_messydate(as.character(deaddate)),
                         Year = messydates::as_messydate(as.character(year)),
-                        Label = manypkgs::standardise_titles(longorgname)) %>%
-  dplyr::relocate(igoID, Label, Beg, End, Year, "afghanistan":"zimbabwe") %>%
+                        Title = manypkgs::standardise_titles(longorgname)) %>%
+  dplyr::relocate(igoID, Title, cowigoNR, Beg, End, Year) %>%
+  dplyr::select(-c("afghanistan":"zimbabwe")) %>%
   dplyr::arrange(Beg)
 
 # Remove duplicates and ensure NAs are coded correctly
