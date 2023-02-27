@@ -17,9 +17,9 @@ TRANSACCESS <- haven::read_dta("data-raw/organizations/TRANSACCESS/Transaccess d
 # away from issues with ambiguous names down the road.
 TRANSACCESS <- as_tibble(TRANSACCESS) %>%
   manydata::transmutate(igoID = IO,
-                        Label = manypkgs::standardise_titles(IOname),
+                        Title = manypkgs::standardise_titles(IOname),
                         igobodyID = IDIOBO,
-                        IGOBody = manypkgs::standardise_titles(IObodyname)) %>%
+                        igoBody = manypkgs::standardise_titles(IObodyname)) %>%
   dplyr::group_by(igoID) %>%
   dplyr::mutate(Beg = min(Year)) %>%
   dplyr::mutate(across(everything(), # ensure NAs are coded correctly
@@ -27,7 +27,7 @@ TRANSACCESS <- as_tibble(TRANSACCESS) %>%
   dplyr::mutate(Beg = messydates::as_messydate(Beg),
                 Year = messydates::as_messydate(Year)) %>% 
   dplyr::distinct() %>% # Remove duplicates
-  dplyr::relocate(igoID, Label, igobodyID, IGOBody, Beg, Year, access) %>%
+  dplyr::relocate(igoID, Title, igobodyID, igoBody, Beg, Year, access) %>%
   dplyr::arrange(Beg)
 
 # manypkgs includes several functions that should help with
@@ -54,4 +54,4 @@ TRANSACCESS <- as_tibble(TRANSACCESS) %>%
 # To add a template of .bib file to the package,
 # please run `manypkgs::add_bib("organizations", "TRANSACCESS")`.
 manypkgs::export_data(TRANSACCESS, database = "organizations",
-                     URL = "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DDE1HE")
+                      URL = "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DDE1HE")

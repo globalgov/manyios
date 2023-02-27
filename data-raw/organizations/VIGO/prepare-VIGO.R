@@ -14,11 +14,11 @@ VIGO <- haven::read_dta("data-raw/organizations/VIGO/isq_2017.dta")
 # away from issues with ambiguous names down the road.
 VIGO <- as_tibble(VIGO) %>%
   manydata::transmutate(igoID = reo,
-                        Label = manypkgs::standardise_titles(reo),
+                        Title = manypkgs::standardise_titles(reo),
                         Year = as.character(year)) %>%
   dplyr::group_by(igoID) %>%
   dplyr::mutate(Beg = min(Year)) %>%
-  dplyr::relocate(igoID, Label, Beg, Year, vitality, zombie, life, dead) %>%
+  dplyr::relocate(igoID, Title, Beg, Year, vitality, zombie, life, dead) %>%
   dplyr::arrange(Beg)
 
 # Remove duplicates and ensure NAs are coded correctly
