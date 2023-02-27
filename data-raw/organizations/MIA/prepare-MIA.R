@@ -12,15 +12,15 @@ MIA <- haven::read_dta("data-raw/organizations/MIA/DP_May 2021.dta")
 # below (in stage three) passes all the tests.
 MIA <- as_tibble(MIA) %>%
   dplyr::rename(igoID = acronym,
-                COWcode = ionumber) %>%
+                cowigoNR = ionumber) %>%
   dplyr::mutate(across(everything(), # ensure NAs coded correctly
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
-  manydata::transmutate(Label = manypkgs::standardise_titles(ioname),
+  manydata::transmutate(Title = manypkgs::standardise_titles(ioname),
                         Beg = messydates::as_messydate(as.character(inception)),
                         Year = messydates::as_messydate(as.character(year))) %>%
   # initial and end variables refer to the first and last years that the IGO is recorded in the dataset respectively,
   # rather than the Beginning or End dates of the IGO
-  dplyr::relocate(igoID, Label, COWcode, Beg, Year) %>%
+  dplyr::relocate(igoID, Title, cowigoNR, Beg, Year) %>%
   dplyr::arrange(Beg)
 
 # manypkgs includes several functions that should help cleaning
