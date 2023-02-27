@@ -2,9 +2,9 @@ citHeader("To cite in publications use:")
 
 citEntry(
   entry    = "Manual",
-  title    = "manyigos",
+  title    = "{manyigos}",
   author   = "Hollway, James",
   year     = "2022",
   note = "For more information on the manyverse: https://github.com/globalgov/manydata",
-  textVersion = paste("Hollway, James", "manyigos", "2022", sep = ".")
+  textVersion = paste("Hollway, James", "{manyigos}: Intergovernmental Organisations for manydata", "2022", sep = ".")
 )
