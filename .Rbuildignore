@@ -6,3 +6,4 @@
 ^data-raw$
 ^data-raw/organizations$
 ^.DS_Store
+^data-raw/memberships$
