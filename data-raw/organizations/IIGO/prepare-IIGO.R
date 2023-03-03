@@ -22,7 +22,7 @@ IIGO <-  IIGO %>%
   dplyr::mutate(`End IIGO Year` = ifelse(`End IIGO Year` == "UK", NA, `End IIGO Year`)) %>% # mark unknown (UK) as NA
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>% # Remove duplicates
-  manydata::transmutate(Label = manypkgs::standardise_titles(Name),
+  manydata::transmutate(Title = manypkgs::standardise_titles(Name),
                         Beg = messydates::as_messydate(`Beg. Year`),
                         End = messydates::as_messydate(`End IIGO Year`)) %>%
   dplyr::rename(igoID = `Abbrev.`,
@@ -30,7 +30,7 @@ IIGO <-  IIGO %>%
                 End_reason = `Formal (1) or Dead (2)`,
                 Domain = `Issue-area`,
                 `Follow-on IO` = `Follow on org?`) %>%
-  dplyr::relocate(igoID, Label, Beg, End, End_reason, Regional) %>%
+  dplyr::relocate(igoID, Title, Beg, End, End_reason, Regional) %>%
   dplyr::distinct() %>%
   dplyr::arrange(Beg)
 
