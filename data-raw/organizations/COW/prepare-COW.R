@@ -21,6 +21,7 @@ COW <- as_tibble(COW) %>%
                         End = messydates::as_messydate(as.character(deaddate)),
                         Year = messydates::as_messydate(as.character(year)),
                         Title = manypkgs::standardise_titles(longorgname)) %>%
+  dplyr::rename(cowigoNR = ionum) %>%
   dplyr::relocate(igoID, Title, cowigoNR, Beg, End, Year) %>%
   dplyr::select(-c("afghanistan":"zimbabwe")) %>%
   dplyr::arrange(Beg)
