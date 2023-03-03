@@ -13,8 +13,13 @@
 
 # Extract first page of website because of different URL
 url_1 <- "https://uia.org/ybio"
-#First page has different URL than other pages
-urls <- paste0("https://uia.org/ybio?page=", 1:3004)
+# URL of other pages
+last_page <- read_html(url_1) %>%
+  html_elements("#content .last a") %>%
+  as.character() %>%
+  stringr::str_extract("page=.*[:digit:]") %>%
+  stringr::str_remove("page=")
+urls <- paste0("https://uia.org/ybio?page=", 1:last_page)
 
 extr_title1 <- purrr::map(
   url_1,
