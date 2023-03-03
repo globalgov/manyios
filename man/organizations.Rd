@@ -24,10 +24,10 @@ desec5f, lngdpsum1.}
 members_censor, Mandate/Function, Living, Scope, function_c, scope_c,
 region_c, lifespan, event, event_1, life_1, WWI, WWII, WW,
 full_membership_start, asso_membership_start, observer_start,
-missing_data_start, full_membership_end, asso_membership_end, observer_end,
-missing_data_end.}
+missing_data_start, full_membership_end, asso_membership_end,
+observer_end, missing_data_end.}
 \item{IIGO: }{A dataset with 149 observations and the following
-12 variables: igoID, Label, Beg, End, End_reason, Regional, Nbr., Domain,
+12 variables: igoID, Title, Beg, End, End_reason, Regional, Nbr., Domain,
 Nbr State Mbrs 2017 (or end), Ind. Sec. Year, Formal Treaty Year,
 Follow-on IO.}
 \item{TRANSACCESS: }{A dataset with 9007 observations and the following
@@ -156,7 +156,7 @@ organizations database documentation
 #> |        Column Name         |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
 #> -----------------------------------------------------------------------------------------
 #> |           igoID            |  character  |             149|     2     |     1.34      |
-#> |           Label            |  character  |             149|     0     |       0       |
+#> |           Title            |  character  |             149|     0     |       0       |
 #> |            Beg             |    mdate    |             149|     0     |       0       |
 #> |            End             |    mdate    |             149|    98     |     65.77     |
 #> |         End_reason         |  character  |             149|     0     |       0       |
