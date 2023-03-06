@@ -14,6 +14,7 @@
 # Extract first page of website because of different URL
 url_1 <- "https://uia.org/ybio"
 # URL of other pages
+library(rvest)
 last_page <- read_html(url_1) %>%
   html_elements("#content .last a") %>%
   as.character() %>%
