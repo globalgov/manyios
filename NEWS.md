@@ -1,6 +1,6 @@
 # manyigos 0.0.1
 
-2023-02-23
+2023-03-07
 
 ## Package
 
@@ -37,5 +37,8 @@
 * Closed #5 by adding `VIGO` dataset to organizations database
 * Moved `YIO` dataset to organizations database from `{manyenviron}`
 * Moved `MIA` dataset to organizations database from `{manyenviron}`
+* Added `memberships` database with membership data from COW and IIGO datasets.
+  * Added `COW_MEM` dataset
+  * Added `IIGO_MEM` dataset
 * Cleaned datasets by standardizing titles and dates in databases using `manypkgs::standardise_titles()` and  `messydates::as_messydate()` functions
-* Added tests for datasets with `manypkgs::export_data()` in organizations database
+* Added tests for datasets with `manypkgs::export_data()` in `organizations` and `memberships` database

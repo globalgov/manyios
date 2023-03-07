@@ -1,7 +1,7 @@
 Package: manyigos
 Title: Intergovernmental Organisations for manydata
 Version: 0.0.1
-Date: 2023-02-23
+Date: 2023-03-07
 Description: manyigos provides data on intergovernmental organisations in the international system across time. 
     The package combines and cross-references several existing datasets consistent with the manydata package aims.
 URL: https://github.com/globalgov/manyigos
