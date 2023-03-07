@@ -6,10 +6,8 @@
 # This is a template for importing, cleaning, and exporting data
 # ready for many packages universe.
 
-# Stage one: scraping information from https://uia.org/ybio website
-# In this stage you will want to correct the variable names and
-# formats of the 'YIO' object until the object created
-# below (in stage three) passes all the tests.
+# Stage one: Collecting data
+# Data is gathered by scraping information from https://uia.org/ybio
 
 # Extract first page of website because of different URL
 url_1 <- "https://uia.org/ybio"
@@ -52,7 +50,6 @@ YIO <- as.data.frame(Title)
 YIO$Title <- stringr::str_remove_all(YIO$Title, "\n")
 YIO$Title <- stringr::str_remove_all(YIO$Title, "\\s\\s")
 YIO$Title <- stringr::str_remove_all(YIO$Title, "\\s$")
-
 
 # Extract abbreviations column
 extr_abbrev1 <- purrr::map(
@@ -146,9 +143,23 @@ YIO$Country <- stringr::str_remove_all(YIO$Country, "\\s$")
 YIO$Country <- dplyr::na_if(YIO$Country, "")
 
 YIO <- as_tibble(YIO)
+
+# Stage two: Correcting data
+# In this stage you will want to correct the variable names and
+# formats of the 'YIO' object until the object created below  (in stage three)
+# passes all the tests.
 # manypkgs includes several functions that should help cleaning
 # and standardising your data.
 # Please see the vignettes or website for more details.
+YIO <- YIO %>%
+  dplyr::mutate(across(everything(),
+                       ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
+  dplyr::mutate(Title = manypkgs::standardise_titles(Title),
+                Beg = messydates::as_messydate(Beg)) %>%
+  manydata::transmutate(State = Country, igoID = Abbreviation) %>%
+  dplyr::distinct() %>%
+  dplyr::relocate(igoID) %>%
+  dplyr::arrange(Beg)
 
 # Stage three: Connecting data
 # Next run the following line to make YIO available
