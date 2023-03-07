@@ -24,8 +24,8 @@ desec5f, lngdpsum1.}
 members_censor, Mandate/Function, Living, Scope, function_c, scope_c,
 region_c, lifespan, event, event_1, life_1, WWI, WWII, WW,
 full_membership_start, asso_membership_start, observer_start,
-missing_data_start, full_membership_end, asso_membership_end,
-observer_end, missing_data_end.}
+missing_data_start, full_membership_end, asso_membership_end, observer_end,
+missing_data_end.}
 \item{IIGO: }{A dataset with 149 observations and the following
 12 variables: igoID, Title, Beg, End, End_reason, Regional, Nbr., Domain,
 Nbr State Mbrs 2017 (or end), Ind. Sec. Year, Formal Treaty Year,
@@ -36,8 +36,8 @@ ID_Body, openbody, multiple_arr, range_1, depth_1, permanence_1,
 codification_1, range_2, depth_2, permanence_2, codification_2, range_3,
 depth_3, permanence_3, codification_3, range_4, depth_4, permanence_4,
 codification_4, range_5, depth_5, permanence_5, codification_5.}
-\item{YIO: }{A dataset with 75115 observations and the following
-4 variables: Title, Abbreviation, Beg, Country.}
+\item{YIO: }{A dataset with 75966 observations and the following
+4 variables: igoID, Title, Beg, State.}
 \item{MIA: }{A dataset with 3961 observations and the following
 54 variables: igoID, Title, cowigoNR, Beg, Year, initial, end, typeI,
 contract, DIMENSIONS, delegation, pooling, DS_sum_st, COMPONENTS, delaccess,
@@ -213,10 +213,10 @@ organizations database documentation
 #> ----------------------------------------------------------------------------
 #> |  Column Name  |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
 #> ----------------------------------------------------------------------------
-#> |     Title     |  character  |           75115|     0     |       0       |
-#> | Abbreviation  |  character  |           75115|   29296   |      39       |
-#> |      Beg      |    mdate    |           75115|   23141   |     30.81     |
-#> |    Country    |  character  |           75115|   28101   |     37.41     |
+#> |     igoID     |  character  |           75966|   29375   |     38.67     |
+#> |     Title     |  character  |           75966|     0     |       0       |
+#> |      Beg      |    mdate    |           75966|   23150   |     30.47     |
+#> |     State     |  character  |           75966|   28628   |     37.69     |
 #> ----------------------------------------------------------------------------
 #> 
 #> 
