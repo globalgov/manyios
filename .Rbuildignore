@@ -1,3 +1,9 @@
 ^LICENSE\.md$
+^.github$
+^README\.Rmd
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^data-raw$
+^data-raw/organizations$
+^.DS_Store
+^data-raw/memberships$
