@@ -21,14 +21,14 @@ TRANSACCESS <- as_tibble(TRANSACCESS) %>%
                         igobodyID = IDIOBO,
                         igoBody = manypkgs::standardise_titles(IObodyname)) %>%
   dplyr::group_by(igoID) %>%
-  dplyr::mutate(Begin = min(Year)) %>%
+  dplyr::mutate(Beg = min(Year)) %>%
   dplyr::mutate(across(everything(), # ensure NAs are coded correctly
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
-  dplyr::mutate(Begin = messydates::as_messydate(Begin),
+  dplyr::mutate(Beg = messydates::as_messydate(Beg),
                 Year = messydates::as_messydate(Year)) %>% 
   dplyr::distinct() %>% # Remove duplicates
-  dplyr::relocate(igoID, Title, igobodyID, igoBody, Begin, Year, access) %>%
-  dplyr::arrange(Begin)
+  dplyr::relocate(igoID, Title, igobodyID, igoBody, Beg, Year, access) %>%
+  dplyr::arrange(Beg)
 
 # manypkgs includes several functions that should help with
 # cleaning and standardising your data
@@ -53,5 +53,5 @@ TRANSACCESS <- as_tibble(TRANSACCESS) %>%
 # that you're including in the package.
 # To add a template of .bib file to the package,
 # please run `manypkgs::add_bib("organizations", "TRANSACCESS")`.
-manypkgs::export_data(TRANSACCESS, datacube = "organizations",
+manypkgs::export_data(TRANSACCESS, database = "organizations",
                       URL = "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DDE1HE")
