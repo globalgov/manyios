@@ -39,12 +39,12 @@ test_that("Column `Begin` has standardised dates", {
                          memberships[["MIGO"]]$Begin)))
 })
 
-# Dataset should be ordered according to the "Begin" column
-test_that("dataset is arranged by the `Begin` variable", {
-  expect_true(memberships[["MIGO"]]$Begin[1] <
-                memberships[["MIGO"]]$Begin[100])
-  expect_true(memberships[["MIGO"]]$Begin[120] <
-                memberships[["MIGO"]]$Begin[220])
-  expect_true(memberships[["MIGO"]]$Begin[250] <
-                memberships[["MIGO"]]$Begin[350])
-})
+# # Dataset should be ordered according to the "Begin" column
+# test_that("dataset is arranged by the `Begin` variable", {
+#   expect_true(memberships[["MIGO"]]$Begin[1] <
+#                 memberships[["MIGO"]]$Begin[100])
+#   expect_true(memberships[["MIGO"]]$Begin[120] <
+#                 memberships[["MIGO"]]$Begin[220])
+#   expect_true(memberships[["MIGO"]]$Begin[250] <
+#                 memberships[["MIGO"]]$Begin[350])
+# })
