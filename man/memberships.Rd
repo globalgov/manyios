@@ -3,69 +3,52 @@
 \docType{data}
 \name{memberships}
 \alias{memberships}
-\title{memberships datacube}
+\title{memberships database documentation}
 \format{
-\describe{
-\item{MIGO: }{A dataset with 80,624
-observations and 9 variables:
-igoID, stateID, StateName, membership, Year, Begin, End, cowID, and active.}
-\item{IIGO: }{A dataset with 3,502
-observations and 7 variables:
-stateID, StateName, igoID, Title, Begin, End, and Year.}
-}
+The memberships database is a list that contains the
+following 2 datasets: COW_MEM, IIGO_MEM.
 For more information and references to each of the datasets used,
-please use the \code{manydata::call_sources()} and \code{manydata::compare_dimensions()} functions.
+please use the \code{data_source()} and \code{data_contrast()} functions.
+\describe{
+\item{COW_MEM: }{A dataset with 14317 observations and the following
+7 variables: stateID, StateName, igoID, Title, cowigoNR, Beg, End.}
+\item{IIGO_MEM: }{A dataset with 3502 observations and the following
+7 variables: stateID, StateName, igoID, Title, Beg, End, Year.}
 }
-\source{
-
 }
 \usage{
 memberships
 }
 \description{
-The \code{manyigos::memberships} datacube is a list containing 2 datasets: MIGO and IIGO.
-It is a work-in-progress, so please let us know if you have any comments or suggestions.
+memberships database documentation
 }
 \details{
-\if{html}{\out{<div class="sourceCode">}}\preformatted{#> $MIGO
-#> -------------------------------------------------------
-#> |  Variable  |  Class  |  Obs  |  Missing  |  Miss \%  |
-#> -------------------------------------------------------
-#> |igoID       |character|  80624|          0|         0|
-#> |stateID     |character|  80356|        268|      0.33|
-#> |StateName   |character|  80624|          0|         0|
-#> |membership  |character|  80624|          0|         0|
-#> |Year        |mdate    |  80624|          0|         0|
-#> |Begin       |mdate    |  80624|          0|         0|
-#> |End         |mdate    |  80624|          0|         0|
-#> |cowID       |character|  80624|          0|         0|
-#> |active      |character|  80624|          0|         0|
-#> -------------------------------------------------------
+\if{html}{\out{<div class="sourceCode">}}\preformatted{#> $COW_MEM
+#> ----------------------------------------------------------------------------
+#> |  Column Name  |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
+#> ----------------------------------------------------------------------------
+#> |    stateID    |  character  |           14317|    399    |     2.79      |
+#> |   StateName   |  character  |           14317|     0     |       0       |
+#> |     igoID     |  character  |           14317|     0     |       0       |
+#> |     Title     |  character  |           14317|     0     |       0       |
+#> |   cowigoNR    |  character  |           14317|     0     |       0       |
+#> |      Beg      |    mdate    |           14317|     0     |       0       |
+#> |      End      |    mdate    |           14317|     0     |       0       |
+#> ----------------------------------------------------------------------------
 #> 
 #> 
-#> $IIGO
-#> -------------------------------------------------------
-#> |  Variable  |  Class  |  Obs  |  Missing  |  Miss \%  |
-#> -------------------------------------------------------
-#> |stateID     |character|   3491|         11|      0.31|
-#> |StateName   |character|   3502|          0|         0|
-#> |igoID       |character|   3493|          9|      0.26|
-#> |Title       |character|   3502|          0|         0|
-#> |Begin       |mdate    |   3269|        233|      6.65|
-#> |End         |mdate    |   1065|       2437|     69.59|
-#> |Year        |mdate    |   3502|          0|         0|
-#> -------------------------------------------------------
+#> $IIGO_MEM
+#> ----------------------------------------------------------------------------
+#> |  Column Name  |  Data Type  |  Observations  |  Missing  |  Missing (\%)  |
+#> ----------------------------------------------------------------------------
+#> |    stateID    |  character  |            3502|    11     |     0.31      |
+#> |   StateName   |  character  |            3502|     0     |       0       |
+#> |     igoID     |  character  |            3502|     9     |     0.26      |
+#> |     Title     |  character  |            3502|     0     |       0       |
+#> |      Beg      |    mdate    |            3502|    233    |     6.65      |
+#> |      End      |    mdate    |            3502|   2437    |     69.59     |
+#> |     Year      |    mdate    |            3502|     0     |       0       |
+#> ----------------------------------------------------------------------------
 }\if{html}{\out{</div>}}
 }
-\section{Mapping}{
-\tabular{lll}{
-   \emph{manyigos} \tab \emph{MIGO} \tab \emph{IIGO} \cr
-   igoID \tab  \tab Abbreviation \cr
-   stateID \tab  \tab  \cr
-   StateName \tab state_name \tab  \cr
-   cowID \tab ccode \tab  \cr
-   Title \tab IIGO Name \tab  \cr
-}
-}
-
 \keyword{datasets}
