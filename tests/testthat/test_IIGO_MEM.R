@@ -2,49 +2,49 @@
 
 # Report missing values
 test_that("missing observations are reported correctly", {
-  expect_false(any(grepl("^n/a$", memberships[["IIGO"]])))
-  expect_false(any(grepl("^N/A$", memberships[["IIGO"]])))
-  expect_false(any(grepl("^\\s$", memberships[["IIGO"]])))
-  expect_false(any(grepl("^\\.$", memberships[["IIGO"]])))
-  expect_false(any(grepl("N\\.A\\.$", memberships[["IIGO"]])))
-  expect_false(any(grepl("n\\.a\\.$", memberships[["IIGO"]])))
+  expect_false(any(grepl("^n/a$", memberships[["IIGO_MEM"]])))
+  expect_false(any(grepl("^N/A$", memberships[["IIGO_MEM"]])))
+  expect_false(any(grepl("^\\s$", memberships[["IIGO_MEM"]])))
+  expect_false(any(grepl("^\\.$", memberships[["IIGO_MEM"]])))
+  expect_false(any(grepl("N\\.A\\.$", memberships[["IIGO_MEM"]])))
+  expect_false(any(grepl("n\\.a\\.$", memberships[["IIGO_MEM"]])))
 })
 
-# Uniformity tests (agreements have a stateID and Begin columns)
+# Uniformity tests (agreements have a countryID and Beg columns)
 test_that("datasets have the required variables", {
-  pointblank::expect_col_exists(memberships[["IIGO"]],
+  pointblank::expect_col_exists(memberships[["IIGO_MEM"]],
                                 pointblank::vars(stateID))
-  pointblank::expect_col_exists(memberships[["IIGO"]],
-                                pointblank::vars(Begin))
+  pointblank::expect_col_exists(memberships[["IIGO_MEM"]],
+                                pointblank::vars(Beg))
 })
 
 # Date columns should be in mdate class
 test_that("Columns are not in date, POSIXct or POSIXlt class", {
-  expect_false(any(lubridate::is.Date(memberships[["IIGO"]])))
-  expect_false(any(lubridate::is.POSIXct(memberships[["IIGO"]])))
-  expect_false(any(lubridate::is.POSIXlt(memberships[["IIGO"]])))
+  expect_false(any(lubridate::is.Date(memberships[["IIGO_MEM"]])))
+  expect_false(any(lubridate::is.POSIXct(memberships[["IIGO_MEM"]])))
+  expect_false(any(lubridate::is.POSIXlt(memberships[["IIGO_MEM"]])))
 })
 
 # Dates are standardized for mandatory column
-test_that("Column `Begin` has standardised dates", {
-  expect_equal(class(memberships[["IIGO"]]$Begin), "mdate")
-  expect_false(any(grepl("/", memberships[["IIGO"]]$Begin)))
+test_that("Column `Beg` has standardised dates", {
+  expect_equal(class(memberships[["IIGO_MEM"]]$Beg), "mdate")
+  expect_false(any(grepl("/", memberships[["IIGO_MEM"]]$Beg)))
   expect_false(any(grepl("^[:alpha:]$",
-                         memberships[["IIGO"]]$Begin)))
+                         memberships[["IIGO_MEM"]]$Beg)))
   expect_false(any(grepl("^[:digit:]{2}$",
-                         memberships[["IIGO"]]$Begin)))
+                         memberships[["IIGO_MEM"]]$Beg)))
   expect_false(any(grepl("^[:digit:]{3}$",
-                         memberships[["IIGO"]]$Begin)))
+                         memberships[["IIGO_MEM"]]$Beg)))
   expect_false(any(grepl("^[:digit:]{1}$",
-                         memberships[["IIGO"]]$Begin)))
+                         memberships[["IIGO_MEM"]]$Beg)))
 })
 
-# # Dataset should be ordered according to the "Begin" column
-# test_that("dataset is arranged by the `Begin` variable", {
-#   expect_true(memberships[["IIGO"]]$Begin[1] <
-#                 memberships[["IIGO"]]$Begin[100])
-#   expect_true(memberships[["IIGO"]]$Begin[120] <
-#                 memberships[["IIGO"]]$Begin[220])
-#   expect_true(memberships[["IIGO"]]$Begin[250] <
-#                 memberships[["IIGO"]]$Begin[350])
-# })
+# Dataset should be ordered according to the "Beg" column
+test_that("dataset is arranged by the `Beg` variable", {
+  expect_true(memberships[["IIGO_MEM"]]$Beg[1] <
+                memberships[["IIGO_MEM"]]$Beg[100])
+  expect_true(memberships[["IIGO_MEM"]]$Beg[120] <
+                memberships[["IIGO_MEM"]]$Beg[220])
+  expect_true(memberships[["IIGO_MEM"]]$Beg[250] <
+                memberships[["IIGO_MEM"]]$Beg[350])
+})
