@@ -1,18 +1,32 @@
-#' memberships database documentation
-#'
-#' @format The memberships database is a list that contains the
-#' following 2 datasets: COW_MEM, IIGO_MEM.
-#' For more information and references to each of the datasets used,
-#' please use the `data_source()` and `data_contrast()` functions.
-#'\describe{
-#' \item{COW_MEM: }{A dataset with 14317 observations and the following
-#' 7 variables: stateID, StateName, igoID, Title, cowigoNR, Beg, End.}
-#' \item{IIGO_MEM: }{A dataset with 3502 observations and the following
-#' 7 variables: stateID, StateName, igoID, Title, Beg, End, Year.}
+#' memberships datacube
+#' @description `r describe_datacube(manyigos::memberships)`.
+#'   It is a work-in-progress, so please let us know if you have any comments or suggestions.
+#' @format
+#' \describe{
+#' \item{MIGO: }{A dataset with `r prettyNum(nrow(manyigos::memberships$MIGO), big.mark=",")` 
+#' observations and `r ncol(manyigos::memberships$MIGO)` variables: 
+#' `r cli::pluralize("{names(manyigos::memberships$MIGO)}")`.}
+#' \item{IIGO: }{A dataset with `r prettyNum(nrow(manyigos::memberships$IIGO), big.mark=",")` 
+#' observations and `r ncol(manyigos::memberships$IIGO)` variables: 
+#' `r cli::pluralize("{names(manyigos::memberships$IIGO)}")`.}
 #' }
-#'
+#' For more information and references to each of the datasets used,
+#' please use the `manydata::call_sources()` and `manydata::compare_dimensions()` functions.
+#' @source
+#'   `r call_citations(memberships, output = "help")`
+#' @section Mapping:
+#' 
+#' |  *manyigos*  | *MIGO*  | *IIGO* | 
+#' |:---------------|:------|:------|
+#' | igoID  | | Abbreviation|
+#' | stateID  | | |
+#' | StateName | state_name | |
+#' | cowID | ccode | |
+#' | Title | IIGO Name | |
+#' 
+#' @md
 #' @details
 #' ``` {r, echo = FALSE, warning = FALSE}
-#' lapply(memberships, messydates::mreport)
+#' lapply(memberships, manydata::mreport)
 #' ```
 "memberships"
