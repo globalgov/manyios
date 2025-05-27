@@ -13,7 +13,6 @@ navbar:
     left:
     - home
     - reference
-    - articles
     - news
     right:
     - packages
@@ -40,17 +39,14 @@ navbar:
           href: https://globalgov.github.io/manypkgs/
         - text: manystates
           href: https://globalgov.github.io/manystates/
-        - text: manyenviron
-          href: https://globalgov.github.io/manyenviron/
-        - text: manytrade
-          href: https://globalgov.github.io/manytrade/
-        - text: manyhealth
-          href: https://globalgov.github.io/manyhealth/  
+        - text: manytreaties
+          href: https://globalgov.github.io/manytreaties/
 reference:
    - title: "Data"
      desc: "manyigos contains the following databases"
      contents:
      - organizations
+     - memberships
 footer:
   structure:
     left: devs
