@@ -1,3 +1,15 @@
+# manyigos 0.0.2
+
+2025-05-26
+
+## Package
+
+* Added new package logo
+
+## Data
+
+* Added `memberships$MIGO` dataset
+
 # manyigos 0.0.1
 
 2023-03-07
