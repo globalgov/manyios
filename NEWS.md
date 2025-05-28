@@ -4,7 +4,7 @@
 
 ## Package
 
-* Added new package logo
+* Closed #7 by adding website and new package logo
 
 ## Data
 
