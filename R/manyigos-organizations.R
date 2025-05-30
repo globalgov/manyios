@@ -17,6 +17,7 @@
 #' please use the `manydata::call_sources()` and `manydata::compare_dimensions()` functions.
 #' @source
 #'   `r call_citations(organizations, output = "help")`
+#' @md
 #' @section Mapping:
 #' 
 #' |  *manyigos*  | *DIGO*  | *IIGO* | *TRANSACCESS* |
@@ -33,7 +34,6 @@
 #' | igobodyID | | | IDIOBO |
 #' | igoBody | | | IObodyname |
 #' 
-#' @md
 #' @details
 #' ``` {r, echo = FALSE, warning = FALSE}
 #' lapply(organizations, manydata::mreport)
