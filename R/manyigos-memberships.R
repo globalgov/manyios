@@ -33,7 +33,7 @@
 
 info_memberships <- tibble::tibble(Dataset = names(utils::data(memberships, package = "manyigos")),
                                      Source = c("",
-                                                ""),
+                                                "Vabulas, Felicity, and Duncan Snidal. 2021. Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset. Journal of Peace Research, 58(4): 859-869."),
                                      URL = c("",
-                                             ""))
+                                             "https://doi.org/10.1177/0022343320943920"))
 

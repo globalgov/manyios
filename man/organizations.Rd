@@ -22,7 +22,7 @@ please use the \code{manydata::call_sources()} and \code{manydata::compare_dimen
 \source{
 \itemize{
 \item 
-\item 
+\item Vabulas, Felicity, and Duncan Snidal. 2021. Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset. Journal of Peace Research, 58(4): 859-869.
 \item 
 }
 }
