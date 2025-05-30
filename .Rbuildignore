@@ -7,3 +7,6 @@
 ^data-raw/organizations$
 ^.DS_Store
 ^data-raw/memberships$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
