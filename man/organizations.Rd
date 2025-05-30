@@ -20,7 +20,11 @@ For more information and references to each of the datasets used,
 please use the \code{manydata::call_sources()} and \code{manydata::compare_dimensions()} functions.
 }
 \source{
-
+\itemize{
+\item 
+\item 
+\item 
+}
 }
 \usage{
 organizations

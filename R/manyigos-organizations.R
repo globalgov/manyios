@@ -39,3 +39,12 @@
 #' lapply(organizations, manydata::mreport)
 #' ```
 "organizations"
+
+info_organizations <- tibble::tibble(Dataset = names(utils::data(organizations, package = "manyigos")),
+                                  Source = c("",
+                                             "",
+                                             ""),
+                                  URL = c("",
+                                          "",
+                                          ""))
+
