@@ -125,6 +125,18 @@ orgRegex <- dplyr::tribble(
 ## F ####
 "FEAST","Far East Comm",
 "FIPLC","Fund 4 Devel. of Indigen Peoples of LA/Carib",
+## G ####
+"GATT","General Agreement Tariff & Trade",
+"GENVF","Global Environ. Fund",
+"GHSI","Global Health Security Initiative",
+"GRP3","Group of 3",
+"GRP15","Group of 15",
+"GRP24","Group of 24",
+"GRPEO","Group on Earth Observations",
+"GBACT","Group on Balkan Agreem. on Coop. on Tourism",
+"GRSNC","Guidance Comm. for Road Safety in Nordic Cntry",
+"GUCC","Gulf Cooperation Council",
+"GOIC","Gulf Org. for Industrial Consulting",
 ## H ####
 "HCPIL","Hague Conf on Private Intl Law",
 ## J ####
