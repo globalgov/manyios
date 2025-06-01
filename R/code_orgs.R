@@ -25,6 +25,7 @@
 code_orgs <- function(text, code = TRUE, max_count = 1){
   
   if(missing(text)) return(orgRegex)
+  if(ncol(orgRegex)==2) orgRegex$regex <- orgRegex$Label
   
   text <- stringi::stri_trans_general(text,"latin-ascii")
   
