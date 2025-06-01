@@ -130,6 +130,25 @@ orgRegex <- dplyr::tribble(
 ## J ####
 "JINR","Joint Instit for Nuke Research",
 ## K ####
+## O ####
+"OASU","Pan-Am Union/Org of Am States",
+"OMVG","Gambia River Basin Dev. Org.",
+"OTIF","Central Office for Intl Railway Transport",
+"OIVV","International Organization of Vine and Wine",
+"OCAM","Common Afro-Malagasy Economic Org",
+"OECD","Org for Econ Coop and Development",
+"OAFU","Org for African Unity",
+"OEEC","Org for European Economic Coop",
+"OSCE","Org. Security Cooperation Europe",
+"ORAIL","Org for the Collaboration of Railways",
+"OMDKR","Org. Management & Dev. of Kaegara River",
+"OAPEC","Org. Arab Petroleum Export. Countries",
+"OCAS","Org. Central Am. States",
+"OECS","Org. Eastern Caribbean States",
+"OPEC","Org of Petroleum Exporting Countries",
+"OISLC","Org. Islamic Conference",
+"OSLO","Oslo Commission",
+"OSPAR","OSPAR Commission",
 ## Q ####
   ## R ####
 "ROPAH","Intl Reg Org against Plant & Animal Disease",
