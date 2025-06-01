@@ -131,6 +131,17 @@ orgRegex <- dplyr::tribble(
 "JINR","Joint Instit for Nuke Research",
 ## K ####
 ## Q ####
+  ## R ####
+"ROPAH","Intl Reg Org against Plant & Animal Disease",
+"RADTU","Radiotelegraph Union",
+"RASCO","Reg. Afr. Satellite Comm. Org.",
+"RECSA","Regional Centre on Small Arms and Light Weapons",
+"RCFC","Reg Commonwealth in the Field of Comm",
+"REGCC","Regional Cooperation Council",
+"RAELA","Reg. Council for Adult Educ. & Literacy in Africa",
+"REPC","Reparation Commission",
+"RIMMO","Reserve internationale medit. occidentale",
+"RIOG","Rio Group",
 ## T ####
 "TCRMG","Tripartite Agreement for Monetary Gold",
 "TURKC","Joint Admin. of Turkish Culture & Arts",
