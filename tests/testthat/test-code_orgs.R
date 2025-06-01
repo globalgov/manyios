@@ -1,5 +1,5 @@
-orgs <- code_orgs() %>% dplyr::filter(nchar(orgID) > 5 | nchar(orgID) < 4) %>% 
-  dplyr::pull(orgID)
+orgs <- code_orgs() %>% subset(nchar(orgID) > 5 | nchar(orgID) < 4)
+orgs <- orgs$orgID
 
 test_that("org codes are all between 4 and 5 characters", {
   expect_equal(orgs, vector("character"))
