@@ -137,6 +137,19 @@ orgRegex <- dplyr::tribble(
 ## V ####
 "VALDI","Group of S. Hemisp. Countries on Env.",
 "VASAB","Vision & Strategies Around Baltic Sea",
+## W ####
+"WCOMD","World Customs Org",
+"WPACT","Warsaw Treaty Org",
+"WASSA","Wassenaar Arrangement",
+"WAEC","West Afr. Examinations Council",
+"WAHC","West African Health Community",
+"WAHO","West African Health Organization",
+"WEUN","Western European Union",
+"WNORF","West Nordic Fund",
+"WCDC","Working Community of Danube Countries",
+"WIPO","World Intell Prop Org",
+"WTOUR","World Tourism Org.",
+"WTOMC","World Trade Org"
 ## Y ####
   ## Z ####
   ## Other ####
