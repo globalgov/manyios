@@ -22,6 +22,9 @@ License: CC BY 4.0
 Depends: 
     R (>= 3.5.0),
     manydata
+Imports:
+    purrr,
+    stringi
 Suggests:
     pointblank,
     testthat (>= 3.0.0),

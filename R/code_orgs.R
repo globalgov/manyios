@@ -13,8 +13,8 @@
 #'   Where more than one organization is matched, the organizations are returned as a set,
 #'   i.e. in the format "\{UNORG,EURO\}".
 #'   By default `max_count = 1`, which will just return the first match.
-#' @importFrom stringr str_replace_all str_detect
-#' @importFrom knitr kable
+#' @importFrom purrr map_chr
+#' @importFrom stringi stri_trans_general stri_detect_regex
 #' @examples
 #' code_orgs(c("We visited the United Nations",
 #'   "This was a European Union Resolution",
