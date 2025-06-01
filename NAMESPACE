@@ -2,4 +2,8 @@
 
 export(code_orgs)
 export(consolidate)
+importFrom(knitr,kable)
 importFrom(manydata,consolidate)
+importFrom(purrr,map_chr)
+importFrom(stringr,str_detect)
+importFrom(stringr,str_replace_all)
