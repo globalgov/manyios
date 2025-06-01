@@ -117,3 +117,28 @@ orgRegex <- dplyr::tribble(
 "BIONT","BIONET",
 "BNDP","Board of Nordic Dev. Projects",
 "BCSC","British Commonwealth Scientific Comm",
+## D ####
+"DANUB","Danube Commission",
+"DLCEA","Desert Locust Control Org-East Af",
+"DEV8","Developing 8 Organization for Economic Cooperation",
+"DBGLS","Dev. Bank of Great Lake States",
+## F ####
+"FEAST","Far East Comm",
+"FIPLC","Fund 4 Devel. of Indigen Peoples of LA/Carib",
+## H ####
+"HCPIL","Hague Conf on Private Intl Law",
+## J ####
+"JINR","Joint Instit for Nuke Research",
+## K ####
+## Q ####
+## T ####
+"TCRMG","Tripartite Agreement for Monetary Gold",
+"TURKC","Joint Admin. of Turkish Culture & Arts",
+## V ####
+"VALDI","Group of S. Hemisp. Countries on Env.",
+"VASAB","Vision & Strategies Around Baltic Sea",
+## Y ####
+  ## Z ####
+  ## Other ####
+)
+
