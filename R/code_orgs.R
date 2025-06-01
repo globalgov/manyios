@@ -209,6 +209,17 @@ orgRegex <- dplyr::tribble(
 "LOAS","League of Arab States",
 "LGON","League of Nations",
 "LGIDA","Liptako-Gourma Integrated Dev. Auth.",
+## M ####
+"MANRU","Mano River Union",
+"MAOCN","Maritime Analysis and Operations Centre - Narcotics",
+"MEDWN","Mediterranean Water Network",
+"MCSUR","MERCOSUR",
+"MARRI","Migration, Asylum, Refugees Regional Initiative",
+"MWCAM","Minist Conf of West & Cent African States on Maritime",
+"MPTTC","Multi-Country Posts & Telecomm. Training Center",
+"MONTP","Multilat. Fund for the Implement. of the Montreal Protocol",
+"MIGA","Multilateral Investment Guarantee Agency",
+"MULFO","Multilateral Force Org.",
 ## O ####
 "OASU","Pan-Am Union/Org of Am States",
 "OMVG","Gambia River Basin Dev. Org.",
