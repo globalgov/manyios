@@ -130,6 +130,22 @@ orgRegex <- dplyr::tribble(
 ## J ####
 "JINR","Joint Instit for Nuke Research",
 ## K ####
+## L ####
+"LCSEC","Group of L/A & Carib. Sugar Exp. Countries",
+"LCBC","Lake Chad Basin Comm",
+"LCRH","Joint Nordic Org. Lappish Culture & Reindeer",
+"LACP","Latin Am Center for Physics",
+"LACAC","L/A Civil Aviation Comm.",
+"SELA","Latin American Economic System",
+"LAIEC","Latin American Institute of Educational Communication",
+"LAEO","Latin American Energy Org.",
+"LAFDO","L/A Fisheries Devel. Org.",
+"LAFTA","Latin American Free Trade Area",
+"LAIA","Latin Am Integration Assn",
+"LATIN","Latin Union",
+"LOAS","League of Arab States",
+"LGON","League of Nations",
+"LGIDA","Liptako-Gourma Integrated Dev. Auth.",
 ## O ####
 "OASU","Pan-Am Union/Org of Am States",
 "OMVG","Gambia River Basin Dev. Org.",
