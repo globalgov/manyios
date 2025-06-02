@@ -1,13 +1,16 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>https://globalgov.github.io/manyigos/404.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/CODE_OF_CONDUCT.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/CONTRIBUTING.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/LICENSE.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/authors.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/index.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/news/index.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/reference/index.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/reference/memberships.html</loc></url>
-<url><loc>https://globalgov.github.io/manyigos/reference/organizations.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/404.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/CONTRIBUTING.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/LICENSE.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/authors.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/index.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/news/index.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/reference/code_orgs.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/reference/index.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/reference/manyios-package.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/reference/memberships.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/reference/organizations.html</loc></url>
+<url><loc>https://globalgov.github.io/manyios/reference/reexports.html</loc></url>
 </urlset>
 

@@ -5,15 +5,15 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Intergovernmental Organisations for manydata • manyigos</title>
+<title>Intergovernmental Organisations for manydata • manyios</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Intergovernmental Organisations for manydata">
-<meta name="description" content="manyigos provides data on intergovernmental organisations in the international system across time. The package combines and cross-references several existing datasets consistent with the manydata package aims.">
-<meta property="og:description" content="manyigos provides data on intergovernmental organisations in the international system across time. The package combines and cross-references several existing datasets consistent with the manydata package aims.">
+<meta name="description" content="manyios provides data on intergovernmental organisations in the international system across time. The package combines and cross-references several existing datasets consistent with the manydata package aims.">
+<meta property="og:description" content="manyios provides data on intergovernmental organisations in the international system across time. The package combines and cross-references several existing datasets consistent with the manydata package aims.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -21,9 +21,9 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">manyigos</a>
+    <a class="navbar-brand me-2" href="index.html">manyios</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.0.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
     <li><a class="external-link dropdown-item" href="https://globalgov.github.io/manytreaties/">manytreaties</a></li>
   </ul>
 </li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/globalgov/manyigos"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/globalgov/manyios"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -55,77 +55,62 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="manyigos-">manyigos <img src="reference/figures/manyigoslogo.png" align="right" width="220"><a class="anchor" aria-label="anchor" href="#manyigos-"></a>
+<div class="page-header"><h1 id="manyios-">manyios <img src="reference/figures/manyioslogo.png" align="right" width="220"><a class="anchor" aria-label="anchor" href="#manyios-"></a>
 </h1></div>
 <!-- badges: start -->
 
-<p><code>manyigos</code> is a data package within the <a href="https://github.com/globalgov" class="external-link">many universe of packages</a>. It contains an ensemble of datasets currently available on intergovernmental organizations in the world, including information on their beginning and, where applicable, end dates, state members, and aspects of institutional design. The package is geared towards global governance research, but can also be used by anyone interested in international organizations across time.</p>
+<p><code>manyios</code> is a data package within the <a href="https://github.com/globalgov" class="external-link">many universe of packages</a>. It contains an ensemble of datasets currently available on intergovernmental organizations in the world, including information on their beginning and, where applicable, end dates, state members, and aspects of institutional design. The package is geared towards global governance research, but can also be used by anyone interested in international organizations across time.</p>
 <p>Please also check out <a href="https://github.com/globalgov/manydata" class="external-link"><code>{manydata}</code></a> for more information about the other packages and tools to handle data from the many universe of packages.</p>
 <div class="section level2">
 <h2 id="how-to-install">How to install:<a class="anchor" aria-label="anchor" href="#how-to-install"></a>
 </h2>
-<p>We’ve made it easier than ever to install and start analysing global governance data in R. Simply install the core package, <a href="https://github.com/globalgov/manydata" class="external-link">manydata</a>, as outlined below, to discover, install, and update various packages from the many packages universe.</p>
+<p>We’ve made it easier than ever to install and start analysing global governance data in R. Simply install the core package, <a href="https://github.com/globalgov/manydata" class="external-link">manydata</a>,as follows, and then you can discover, install and update various ‘many packages’ from the console.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">manydata</span><span class="fu">::</span><span class="fu"><a href="https://globalgov.github.io/manydata/reference/defunct.html" class="external-link">get_packages</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># this prints a list of the publicly available data packages currently available</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="do">## # A tibble: 7 × 6</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="do">##   Name        Repository            Installed Latest Updated    Description     </span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="do">##   &lt;chr&gt;       &lt;chr&gt;                 &lt;chr&gt;     &lt;chr&gt;  &lt;date&gt;     &lt;chr&gt;           </span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="do">## 1 manydata    globalgov/manydata    0.8.2     0.8.2  2022-11-17 An R portal for…</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="do">## 2 manyenviron globalgov/manyenviron 0.2.1     0.2.2  2022-10-18 Ensembled data …</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="do">## 3 manyhealth  globalgov/manyhealth  0.2.0     0.2.0  2023-02-14 Ensembled data …</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="do">## 4 manypkgs    globalgov/manypkgs    0.2.3     0.2.2  2022-07-21 Support for cre…</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="do">## 5 manystates  globalgov/manystates  0.1.1     0.2.0  2022-10-17 Ensembled data …</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="do">## 6 manytrade   globalgov/manytrade   0.2.0     0.2.0  2022-10-17 Ensembled data …</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="do">## 7 messydates  globalgov/messydates  0.3.5     0.3.5  2023-01-20 An R package fo…</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#manydata::get_packages("manyigos") # this downloads and installs the named package</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">manydata</span><span class="fu">::</span><span class="fu"><a href="https://globalgov.github.io/manydata/reference/call_packages.html" class="external-link">call_packages</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># this prints a list of the publicly available data packages currently available</span></span>
+<span><span class="co">#manydata::call_packages("manyios") # this downloads and installs the named package</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="data-included">Data included<a class="anchor" aria-label="anchor" href="#data-included"></a>
 </h2>
-<p>Once you have installed <a href="https://globalgov.github.io/manydata" class="external-link">manydata</a>, you can see the different databases and datasets included in the <a href="https://github.com/globalgov/manyigos" class="external-link">manyigos</a> package using the following function.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># manydata::data_contrast("manyigos")</span></span></code></pre></div>
+<p>Once you have installed <a href="https://globalgov.github.io/manydata" class="external-link">manydata</a>, you can see the different datasets included in a specific datacube in the <a href="https://github.com/globalgov/manyios" class="external-link">manyios</a> package using the following function.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">manydata</span><span class="fu">::</span><span class="fu"><a href="https://globalgov.github.io/manydata/reference/call_sources.html" class="external-link">call_sources</a></span><span class="op">(</span><span class="st">"manyios"</span>, <span class="st">"organizations"</span><span class="op">)</span></span></code></pre></div>
 <p>Working with ensembles of related data has many advantages for robust analysis. Just take a look at our vignettes <a href="https://globalgov.github.io/manydata/articles/user.html" class="external-link">here</a>.</p>
 </div>
 <div class="section level2">
-<h2 id="the-many-packages-universe">The many packages universe<a class="anchor" aria-label="anchor" href="#the-many-packages-universe"></a>
+<h2 id="many-packages">Many packages<a class="anchor" aria-label="anchor" href="#many-packages"></a>
 </h2>
-<p>The <a href="https://github.com/globalgov/manydata" class="external-link">many universe of packages</a> is aimed at collecting, connecting and correcting network data across issue-domains of global governance.</p>
-<p>While some of our packages can and do include novel data, much of what they offer involves standing on the shoulders of giants. Our packages endeavour to be as transparent as possible about where data comes from, how it has been coded and/or relabeled, and who has done the work. As such, we make it easy to cite both the particular datasets you use by listing their original references with the first function below, as well as the package providers for their work assembling the data using the second function.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Citing the original data</span></span>
-<span><span class="co"># manydata::data_source("manyigos")</span></span>
-<span><span class="co"># Citing the package</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"manyigos"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="do">## To cite in publications use:</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="do">##   Hollway, James.manyigos.2022</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="do">## A BibTeX entry for LaTeX users is</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="do">##   @Manual{,</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="do">##     title = {manyigos},</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="do">##     author = {{Hollway} and {James}},</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="do">##     year = {2022},</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="do">##     note = {For more information on the manyverse: https://github.com/globalgov/manydata},</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="do">##   }</span></span></code></pre></div>
+<p>The development of <a href="https://github.com/globalgov/manydata" class="external-link">many packages</a> is aimed at collecting, connecting and correcting network data across issue-domains of global governance.</p>
+<p>While some ‘many packages’ can and do include novel data, much of what they offer involves standing on the shoulders of giants. ‘many packages’ endeavour to be as transparent as possible about where data comes from, how it has been coded and/or relabelled, and who has done the work. As such, we make it easy to cite the datasets you use by listing the official references using the function above, as well as the package providers for their work assembling the data by using the function below.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"manyios"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## To cite manyios in publications use:</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="do">##   J. Hollway. Intergovernmental Organisations for manydata. 2021.</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="do">## A BibTeX entry for LaTeX users is</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="do">##   @Manual{,</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="do">##     title = {Manyios: Intergovernmental Organisations for manydata},</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="do">##     author = {James Hollway},</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="do">##     year = {2021},</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="do">##     url = {https://github.com/globalgov/manyios},</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="do">##   }</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
 </h2>
-<p><a href="https://github.com/globalgov/manydata" class="external-link">manydata</a> and <a href="https://github.com/globalgov/manypkgs" class="external-link">manypkgs</a> also makes it easy to contribute in lots of different ways.</p>
-<p>If you have already developed a dataset salient to this package, please reach out by flagging it as an <a href="https://github.com/globalgov/manyigos/issues" class="external-link">issue</a> for us, or by forking, further developing the package yourself, and opening a <a href="https://github.com/globalgov/manyigos/pulls" class="external-link">pull request</a> so that your data can easily be integrated into the package.</p>
-<p>If you have collected or developed other data that may not thematically fit in this package, but could be useful within the many packages universe, <a href="https://github.com/globalgov/manypkgs" class="external-link">manypkgs</a> includes a number of functions that make it easy to create a new package and populate with global governance data.</p>
-<p>If you have any further ideas about how this package, or the various other ‘many packages’, might better facilitate your empirical analysis, we’d be very happy to hear from you.</p>
+<p><a href="https://github.com/globalgov/manypkgs" class="external-link"><code>{manypkgs}</code></a> also makes it easy to contribute in lots of different ways.</p>
+<p>If you have already developed a dataset salient to this package, please reach out by flagging this as an <a href="https://github.com/globalgov/manystates/issues" class="external-link">issue</a> for us, or by forking, further developing the package yourself, and opening a <a href="https://github.com/globalgov/manystates/pulls" class="external-link">pull request</a> so that your data can be used easily.</p>
+<p>If you have collected or developed other data that may not be best for this package, but could be useful within the wider universe of <code>many packages</code>, <a href="https://github.com/globalgov/manypkgs" class="external-link"><code>{manypkgs}</code></a> includes a number of functions that make it easy to create a new <code>many package</code> and populate it with clean, consistent global governance data.</p>
+<p>If you have any other ideas about how this package or the manydata universe more broadly might better facilitate your empirical analysis, we’d be very happy to hear from you.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/globalgov/manyigos/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/globalgov/manyigos/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/globalgov/manyios/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/globalgov/manyios/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -148,7 +133,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing manyigos</a></li>
+<li><a href="authors.html#citation">Citing manyios</a></li>
 </ul>
 </div>
 
