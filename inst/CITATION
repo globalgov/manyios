@@ -1,11 +1,11 @@
-citHeader("To cite manyigos in publications use:")
+citHeader("To cite manyios in publications use:")
 
 citEntry(
   entry    = "Manual",
-  title    = "Manyigos: Intergovernmental Organisations for manydata",
+  title    = "Manyios: Intergovernmental Organisations for manydata",
   author   = "James Hollway",
   year     = "2021",
-  url      = "https://github.com/globalgov/manyigos",
-  textVersion = paste("J. Hollway. Agreements for manydata. 2021."
+  url      = "https://github.com/globalgov/manyios",
+  textVersion = paste("J. Hollway. Intergovernmental Organisations for manydata. 2021."
   )
 )

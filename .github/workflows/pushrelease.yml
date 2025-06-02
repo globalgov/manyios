@@ -103,7 +103,7 @@ jobs:
           cp ./linuxOS/${{ env.PACKAGE_NAME }}_${{ env.PACKAGE_VERSION }}*.tar.gz .
           cp ./winOS/${{ env.PACKAGE_NAME }}_${{ env.PACKAGE_VERSION }}*.zip .
           echo "Renamed files"
-          ls manyigos_*
+          ls manyios_*
        
       - name: Create Release and Upload Assets
         id: create_release
@@ -116,9 +116,9 @@ jobs:
           fail_on_unmatched_files: true
           # Specify the assets you want to upload
           files: |
-            manyigos_*.tgz
-            manyigos_*.tar.gz
-            manyigos_*.zip
+            manyios_*.tgz
+            manyios_*.tar.gz
+            manyios_*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 

@@ -1,4 +1,4 @@
-url: https://globalgov.github.io/manyigos/
+url: https://globalgov.github.io/manyios/
 development:
     mode: auto
 template:
@@ -29,7 +29,7 @@ navbar:
       href: news/index.html
     github:
       icon: "fab fa-github fa-lg"
-      href: https://github.com/globalgov/manyigos
+      href: https://github.com/globalgov/manyios
     packages:
       text: Other packages
       menu:
@@ -43,7 +43,7 @@ navbar:
           href: https://globalgov.github.io/manytreaties/
 reference:
    - title: "Data"
-     desc: "manyigos contains the following databases"
+     desc: "manyios contains the following databases"
      contents:
      - organizations
      - memberships

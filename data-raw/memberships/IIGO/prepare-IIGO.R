@@ -24,7 +24,7 @@ IIGO <- as_tibble(IIGO) %>%
   dplyr::mutate(stateID = manypkgs::code_states(StateName, activity = FALSE,
                                                 replace = "ID"))
 
-iigo <- manyigos::organizations$IIGO %>%
+iigo <- manyios::organizations$IIGO %>%
   dplyr::select(igoID, Title, Begin, End)
 
 IIGO <- dplyr::left_join(IIGO, iigo, by = c("igoID", "Title"))
