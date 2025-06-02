@@ -47,6 +47,10 @@ reference:
      contents:
      - organizations
      - memberships
+   - title: "Function to identify organization names or abbreviations."
+     desc: "This function assists users to identify international organizations in text, returning the organization name or abbreviation."
+     contents:
+     - code_orgs
 footer:
   structure:
     left: devs
