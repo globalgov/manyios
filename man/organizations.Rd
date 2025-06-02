@@ -21,9 +21,9 @@ please use the \code{manydata::call_sources()} and \code{manydata::compare_dimen
 }
 \source{
 \itemize{
-\item 
-\item Vabulas, Felicity, and Duncan Snidal. 2021. Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset. Journal of Peace Research, 58(4): 859-869.
-\item 
+\item Eilstrup-Sangiovanni, Mette. 2020. 'Death of international organizations. The organizational ecology of intergovernmental organizations, 1815–2015'. \emph{The Review of International Organizations} 15, pp. 339-370.
+\item Vabulas, Felicity, and Duncan Snidal. 2021. 'Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset'. \emph{Journal of Peace Research} 58.4, pp. 859-869.
+\item Sommerer, Thomas, Jonas Tallberg, and Theresa Squatrito. 2015. 'Transnational Access to International Organizations 1950-2010'. \emph{Harvard Dataverse}.
 }
 }
 \usage{

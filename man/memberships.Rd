@@ -18,8 +18,8 @@ please use the \code{manydata::call_sources()} and \code{manydata::compare_dimen
 }
 \source{
 \itemize{
-\item 
-\item Vabulas, Felicity, and Duncan Snidal. 2021. Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset. Journal of Peace Research, 58(4): 859-869.
+\item Roger, Charles B. and Sam S. Rowan. 2022. 'The New Terrain of Global Governance: Mapping Membership in Informal IOs'. \emph{Journal of Conflict Resolution} 67.6.
+\item Vabulas, Felicity, and Duncan Snidal. 2021. 'Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset'. \emph{Journal of Peace Research}, 58.4, pp. 859-869.
 }
 }
 \usage{
