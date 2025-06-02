@@ -23,16 +23,16 @@ IIGO <-  IIGO %>%
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>% # Remove duplicates
   manydata::transmutate(Title = manypkgs::standardise_titles(Name),
-                        Beg = messydates::as_messydate(`Beg. Year`),
+                        Begin = messydates::as_messydate(`Beg. Year`),
                         End = messydates::as_messydate(`End IIGO Year`)) %>%
   dplyr::rename(igoID = `Abbrev.`,
                 Regional = `Reg.`,
                 End_reason = `Formal (1) or Dead (2)`,
                 Domain = `Issue-area`,
-                `Follow-on IO` = `Follow on org?`) %>%
-  dplyr::relocate(igoID, Title, Beg, End, End_reason, Regional) %>%
+                `Follow-on IGO` = `Follow on org?`) %>%
+  dplyr::relocate(igoID, Title, Begin, End, End_reason, Regional) %>%
   dplyr::distinct() %>%
-  dplyr::arrange(Beg)
+  dplyr::arrange(Begin)
 
 # manypkgs includes several functions that should help with
 # cleaning and standardising your data
@@ -57,5 +57,5 @@ IIGO <-  IIGO %>%
 # that you're including in the package.
 # To add a template of .bib file to the package,
 # please run `manypkgs::add_bib("organizations", "IIGO")`.
-manypkgs::export_data(IIGO, database = "organizations",
+manypkgs::export_data(IIGO, datacube = "organizations",
                       URL = "https://journals.sagepub.com/doi/full/10.1177/0022343320943920")

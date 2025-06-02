@@ -22,13 +22,13 @@ DIGO <- as_tibble(DIGO) %>%
   # make sure NAs are correctly coded
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
-  manydata::transmutate(Beg = messydates::as_messydate(sdate),
+  manydata::transmutate(Begin = messydates::as_messydate(sdate),
                         End = messydates::as_messydate(ddate)) %>%
   dplyr::rename(Death = `Fate/death_reason`)
   dplyr::select(-c("...30", "...31", "...32")) %>%
-  dplyr::relocate(igoID, Title, Beg, End, Death) %>%
+  dplyr::relocate(igoID, Title, Begin, End, Death) %>%
   dplyr::distinct(.keep_all = TRUE) %>%
-  dplyr::arrange(Beg)
+  dplyr::arrange(Begin)
 
 # manypkgs includes several functions that should help with
 # cleaning and standardising your data
@@ -53,5 +53,5 @@ DIGO <- as_tibble(DIGO) %>%
 # that you're including in the package.
 # To add a template of .bib file to the package,
 # please run `manypkgs::add_bib("organizations", "DIGO")`.
-manypkgs::export_data(DIGO, database = "organizations",
+manypkgs::export_data(DIGO, datacube = "organizations",
                      URL = "https://link.springer.com/article/10.1007/s11558-018-9340-5")

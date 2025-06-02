@@ -1,3 +1,17 @@
+# manyios 0.0.2
+
+2025-06-02
+
+## Package
+
+* Closed #7 adding website and new package logo
+* Closed #11 by updating documentation to make it easier to retrieve information on data sources
+* Closed #13 by changing package name to manyios and updating references to manyigos across files
+
+## Data
+
+* Added `memberships$MIGO` dataset
+
 # manyigos 0.0.1
 
 2023-03-07
