@@ -32,8 +32,8 @@
 "memberships"
 
 info_memberships <- tibble::tibble(Dataset = names(utils::data(memberships, package = "manyigos")),
-                                     Source = c("",
-                                                "Vabulas, Felicity, and Duncan Snidal. 2021. Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset. Journal of Peace Research, 58(4): 859-869."),
-                                     URL = c("",
-                                             "https://doi.org/10.1177/0022343320943920"))
+                                   Source = c("Roger, Charles B. and Sam S. Rowan. 2022. 'The New Terrain of Global Governance: Mapping Membership in Informal IOs'. _Journal of Conflict Resolution_ 67.6.",
+                                              "Vabulas, Felicity, and Duncan Snidal. 2021. 'Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset'. _Journal of Peace Research_, 58.4, pp. 859-869."),
+                                   URL = c("https://doi.org/10.7910/DVN/8CYXX5",
+                                           "https://doi.org/10.1177/0022343320943920"))
 

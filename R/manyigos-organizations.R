@@ -41,10 +41,10 @@
 "organizations"
 
 info_organizations <- tibble::tibble(Dataset = names(utils::data(organizations, package = "manyigos")),
-                                  Source = c("",
-                                             "Vabulas, Felicity, and Duncan Snidal. 2021. Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset. Journal of Peace Research, 58(4): 859-869.",
-                                             ""),
-                                  URL = c("",
+                                     Source = c("Eilstrup-Sangiovanni, Mette. 2020. 'Death of international organizations. The organizational ecology of intergovernmental organizations, 1815–2015'. _The Review of International Organizations_ 15, pp. 339-370.",
+                                             "Vabulas, Felicity, and Duncan Snidal. 2021. 'Cooperation under autonomy: Building and analyzing the Informal Intergovernmental Organizations 2.0 dataset'. _Journal of Peace Research_ 58.4, pp. 859-869.",
+                                             "Sommerer, Thomas, Jonas Tallberg, and Theresa Squatrito. 2015. 'Transnational Access to International Organizations 1950-2010'. _Harvard Dataverse_."),
+                                     URL = c("https://doi.org/10.1007/s11558-018-9340-5",
                                           "https://doi.org/10.1177/0022343320943920",
-                                          ""))
+                                          "https://10.7910/DVN/DDE1HE"))
 
