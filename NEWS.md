@@ -8,6 +8,11 @@
 ## Data
 
 - Preparation scripts now call `manystates::code_states()` and `manytreaties::standardise_titles()`
+- Rebuilt `organizations` from the DIGO, IIGO, and TRANSACCESS preparation scripts
+- Fixed the mis-decoded titles in `organizations$TRANSACCESS` by reading the source as latin1, 
+  which repairs the Comunidade dos Paises de Lingua Portuguesa and Fondo Indigena names
+- Fixed two titles in `organizations$DIGO` that carried a stray source byte as the text "ab" and "90"
+- Fixed the broken pipe in `prepare-DIGO.R` that stopped the script from running
 - Closed #18 by reading `informals_v3.dta` as UTF-8, 
   which repairs the mis-decoded Sao Tome and Cote d'Ivoire state names in `memberships$MIGO`
 - Closed #18 by recoding `memberships$MIGO` with `manystates::code_states()`, 

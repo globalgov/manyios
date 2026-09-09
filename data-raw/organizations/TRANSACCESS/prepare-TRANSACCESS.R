@@ -7,7 +7,10 @@
 # ready for many packages universe.
 
 # Stage one: Collecting data
-TRANSACCESS <- haven::read_dta("data-raw/organizations/TRANSACCESS/Transaccess data.dta")
+# The .dta is latin1, not UTF-8. Read as UTF-8, accented organisation names
+# such as "Comunidade dos Paises de Lingua Portuguesa" are mis-decoded.
+TRANSACCESS <- haven::read_dta("data-raw/organizations/TRANSACCESS/Transaccess data.dta",
+                               encoding = "latin1")
 
 # Stage two: Correcting data
 # In this stage you will want to correct the variable names and
