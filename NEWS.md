@@ -3,6 +3,7 @@
 ## Package
 
 - Updated the package logo in the README to the new Palais des Nations design
+- Updated templates, workflows, and CONTRIBUTING
 
 ## Data
 
