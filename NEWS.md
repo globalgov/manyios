@@ -2,11 +2,11 @@
 
 ## Package
 
-- Preparation scripts now call `manystates::code_states()` and `manytreaties::standardise_titles()`, 
-  since these functions have moved out of `{manypkgs}`
+- Updated the package logo in the README to the new Palais des Nations design
 
 ## Data
 
+- Preparation scripts now call `manystates::code_states()` and `manytreaties::standardise_titles()`
 - Closed #18 by reading `informals_v3.dta` as UTF-8, 
   which repairs the mis-decoded Sao Tome and Cote d'Ivoire state names in `memberships$MIGO`
 - Closed #18 by recoding `memberships$MIGO` with `manystates::code_states()`, 
