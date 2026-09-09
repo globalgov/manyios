@@ -17,9 +17,9 @@ TRANSACCESS <- haven::read_dta("data-raw/organizations/TRANSACCESS/Transaccess d
 # away from issues with ambiguous names down the road.
 TRANSACCESS <- as_tibble(TRANSACCESS) %>%
   manydata::transmutate(igoID = IO,
-                        Title = manypkgs::standardise_titles(IOname),
+                        Title = manytreaties::standardise_titles(IOname),
                         igobodyID = IDIOBO,
-                        igoBody = manypkgs::standardise_titles(IObodyname)) %>%
+                        igoBody = manytreaties::standardise_titles(IObodyname)) %>%
   dplyr::group_by(igoID) %>%
   dplyr::mutate(Begin = min(Year)) %>%
   dplyr::mutate(across(everything(), # ensure NAs are coded correctly

@@ -18,7 +18,7 @@ DIGO <- readr::read_csv("data-raw/organizations/DIGO/io_dataDID-1.0-RIO.csv")
 # away from issues with ambiguous names down the road.
 DIGO <- as_tibble(DIGO) %>%
   manydata::transmutate(igoID = ioname,
-                        Title = manypkgs::standardise_titles(orgname)) %>%
+                        Title = manytreaties::standardise_titles(orgname)) %>%
   # make sure NAs are correctly coded
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%

@@ -22,7 +22,7 @@ IIGO <-  IIGO %>%
   dplyr::mutate(`End IIGO Year` = ifelse(`End IIGO Year` == "UK", NA, `End IIGO Year`)) %>% # mark unknown (UK) as NA
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>% # Remove duplicates
-  manydata::transmutate(Title = manypkgs::standardise_titles(Name),
+  manydata::transmutate(Title = manytreaties::standardise_titles(Name),
                         Begin = messydates::as_messydate(`Beg. Year`),
                         End = messydates::as_messydate(`End IIGO Year`)) %>%
   dplyr::rename(igoID = `Abbrev.`,
