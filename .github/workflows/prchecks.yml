@@ -35,9 +35,14 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           cache-version: 2
-          needs: check, build
+          # Only `check`, not `build`: Config/Needs/build lists manystates and
+          # manytreaties, which the data-raw preparation scripts need but a
+          # check does not. pkgbuild would otherwise come from devtools in that
+          # same field, so it is requested directly for the Binary step below.
+          needs: check
           extra-packages: |
             any::rcmdcheck
+            any::pkgbuild
 
       - uses: r-lib/actions/check-r-package@v2
         env:
