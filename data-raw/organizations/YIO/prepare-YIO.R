@@ -154,7 +154,7 @@ YIO <- as_tibble(YIO)
 YIO <- YIO %>%
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
-  dplyr::mutate(Title = manypkgs::standardise_titles(Title),
+  dplyr::mutate(Title = manytreaties::standardise_titles(Title),
                 Beg = messydates::as_messydate(Beg)) %>%
   manydata::transmutate(State = Country, igoID = Abbreviation) %>%
   dplyr::distinct() %>%

@@ -8,7 +8,10 @@
 # ready for many packages universe.
 
 # Stage one: Collecting data
-DIGO <- readr::read_csv("data-raw/organizations/DIGO/io_dataDID-1.0-RIO.csv")
+# The source file is latin1, not UTF-8. Read as UTF-8, its two stray high
+# bytes leak into the titles as the literal text "ab" and "90".
+DIGO <- readr::read_csv("data-raw/organizations/DIGO/io_dataDID-1.0-RIO.csv",
+                        locale = readr::locale(encoding = "latin1"))
 
 # Stage two: Correcting data
 # In this stage you will want to correct the variable names and
@@ -17,14 +20,16 @@ DIGO <- readr::read_csv("data-raw/organizations/DIGO/io_dataDID-1.0-RIO.csv")
 # We recommend that you avoid using one letter variable names to keep
 # away from issues with ambiguous names down the road.
 DIGO <- as_tibble(DIGO) %>%
+  # Drop the non-printing characters the source carries in two org names.
+  dplyr::mutate(orgname = stringr::str_remove_all(orgname, "[^[:print:]]")) %>%
   manydata::transmutate(igoID = ioname,
-                        Title = manypkgs::standardise_titles(orgname)) %>%
+                        Title = manytreaties::standardise_titles(orgname)) %>%
   # make sure NAs are correctly coded
   dplyr::mutate(across(everything(),
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
   manydata::transmutate(Begin = messydates::as_messydate(sdate),
                         End = messydates::as_messydate(ddate)) %>%
-  dplyr::rename(Death = `Fate/death_reason`)
+  dplyr::rename(Death = `Fate/death_reason`) %>%
   dplyr::select(-c("...30", "...31", "...32")) %>%
   dplyr::relocate(igoID, Title, Begin, End, Death) %>%
   dplyr::distinct(.keep_all = TRUE) %>%

@@ -7,7 +7,10 @@
 # ready for many packages universe.
 
 # Stage one: Collecting data
-TRANSACCESS <- haven::read_dta("data-raw/organizations/TRANSACCESS/Transaccess data.dta")
+# The .dta is latin1, not UTF-8. Read as UTF-8, accented organisation names
+# such as "Comunidade dos Paises de Lingua Portuguesa" are mis-decoded.
+TRANSACCESS <- haven::read_dta("data-raw/organizations/TRANSACCESS/Transaccess data.dta",
+                               encoding = "latin1")
 
 # Stage two: Correcting data
 # In this stage you will want to correct the variable names and
@@ -17,9 +20,9 @@ TRANSACCESS <- haven::read_dta("data-raw/organizations/TRANSACCESS/Transaccess d
 # away from issues with ambiguous names down the road.
 TRANSACCESS <- as_tibble(TRANSACCESS) %>%
   manydata::transmutate(igoID = IO,
-                        Title = manypkgs::standardise_titles(IOname),
+                        Title = manytreaties::standardise_titles(IOname),
                         igobodyID = IDIOBO,
-                        igoBody = manypkgs::standardise_titles(IObodyname)) %>%
+                        igoBody = manytreaties::standardise_titles(IObodyname)) %>%
   dplyr::group_by(igoID) %>%
   dplyr::mutate(Begin = min(Year)) %>%
   dplyr::mutate(across(everything(), # ensure NAs are coded correctly

@@ -1,12 +1,12 @@
 # Contributing
 
-Contributions to `{manyigos}`, whether in the form of issue identification, bug fixes, new code or documentation are encouraged and welcome, both from research assistants and (early) users of the package:
+Contributions to `{manyios}`, whether in the form of issue identification, bug fixes, new code or documentation are encouraged and welcome, both from research assistants and (early) users of the package:
 
 * [Submit an issue](#issues)
 * [Fix a bug or implement new features](#adding-new-code)
 * [Document existing code](#documentation)
 
-This outlines how to propose a change to a package from the Global Governance Observatory's ecosystem. Please note that the `manyigos` project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+This outlines how to propose a change to a package from the Global Governance Observatory's ecosystem. Please note that the `manyios` project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.
 
 ## Issues
@@ -28,10 +28,10 @@ To run the `lintr` and `goodpractice` checks or use `styler` in a file run:
 
 ```r
 # basic lintr checking
-lintr::lint_package(path = "manyigos/")
+lintr::lint_package(path = "manyios/")
 
 # goodpractices checks. Exclude length 80
-goodpractice::gp(path = "manyigos/",
+goodpractice::gp(path = "manyios/",
    checks = all_checks()[-c(8)])
 
 # styler fix some of the styling issues
@@ -55,7 +55,7 @@ Make sure the package passes R CMD check by running `devtools::check()` before c
 
 If you want to make a bigger change, it's a good idea to first file an issue and make sure someone from the team agrees that it’s needed before openning a pull request. If you’ve found a bug, please file an issue that illustrates the bug with a minimal [reprex](https://www.tidyverse.org/help/#reprex).
 
-Please follow the manyigos pull request guideline (https://github.com/globalgov/manyigos/blob/main/.github/pull_request_template.md)  
+Please follow the manyios pull request guideline (https://github.com/globalgov/manyios/blob/main/.github/pull_request_template.md)  
 
 ### Branches
 We use two **main branches** in this project:
@@ -148,27 +148,26 @@ please follow the ['atomic approach'](https://www.freshconsulting.com/insights/b
 when committing changes. Each commit should address separate aspects as much as possible,
 such as making bug fixes and additions of data in separate commits.
 
-### Testing 
-We use the [testthat](https://testthat.r-lib.org/) package to write unit tests.
-By convention, tests are located in [testthat/tests/](manyigos/tests/testthat).
+### Testing
+We use the [testthat](https://testthat.r-lib.org/) package (edition 3, parallel) to write unit tests.
+Tests live in [tests/testthat/](../tests/testthat).
 
 You should verify that all tests pass before issuing a commit to existing code.
-To run all tests for the latest version manually:
+To run the full suite: `devtools::test()`.
+To run one file: `devtools::test(filter = "IIGO")`, or `testthat::test_file("tests/testthat/test_IIGO.R")`.
 
-```
-git pull
-library("testthat")
-testthat::test_dir("tests/testthat")
-```
+Most of the suite tests *data*, not functions.
+There is one test file for each dataset in a datacube,
+named `test_<DATASET>.R` (e.g. [test_IIGO.R](../tests/testthat/test_IIGO.R)),
+and each checks that the dataset meets the many packages universe requirements:
+missing values are reported as `NA` and not as `"n/a"`, `"."` or similar;
+date columns are in `mdate` class and not `Date`/`POSIXct`/`POSIXlt`;
+dates are ordered; and the ID and title columns are present and unique.
+When you add a dataset, copy the test file of an existing dataset in the same datacube and adapt it.
 
-When writing a new function, consider writing a unit test for that function. 
-We follow several conventions for writing tests:
-
-- A unit test file should test one or more aspects of a single function. This makes it easier to identify the source of bugs, and prevents lower-level tests from failing when higher-level functions change.
-
-- The [naming convention](https://www.tidyverse.org/articles/2019/04/testthat-2-1-0/) for test files is: ``test-FILENAME_IN_R_DIRECTORY-FUNCTION_NAME.R``, i.e. test files are named after the file containing the original function in the [R](manyigos/R) directory, pre-fixed with "test", and optionally post-fixed with the name of the function that is being tested.
-
-- If a test requires auxiliary functions from the package, e.g. to initialize a network with sample data, these belong in a helper file. There should be only one helper file for each `R` file, named ``helper-FILENAME_IN_R_DIRECTORY-FUNCTION_NAME.R``. Re-using existing test data is preferable to creating new data for every test.
+Tests of exported functions follow the tidyverse naming convention instead:
+`test-FILENAME_IN_R_DIRECTORY.R`, e.g. [test-code_orgs.R](../tests/testthat/test-code_orgs.R)
+for [R/code_orgs.R](../R/code_orgs.R).
 
 ## Documentation
 A final way of contributing to the package is in developing the vignettes/articles that illustrate the value added in the package. 
@@ -178,9 +177,118 @@ Please contact us directly with proposals for updating the documentation, or sub
 Note that the package is versioned according to [semantic versioning](https://www.jvandemo.com/a-simple-guide-to-semantic-versioning/).
 This means that versions follow the Major.Minor.Patch semantic format.
 
-Each minor or major level version is also given a new version name, which should be updated in the `zzz.R` file.
+## Package architecture
 
-## For developers using MacOS
-Develops using MacOS might meet problems compiling the packages since the compiling configuration of R in MacOS is usually incorrect. If one meet an error with error info "/usr/bin/ld: cannot find -lgfortran", then he can either correct the configuration himself or follows the following steps to solve the problem:
-1. Run ".libPaths()" command in R and get a path, e.g. one might get "/Library/Frameworks/R.framework/Versions/3.6/Resources/library"
-2. If the path one get in the first step is "something/library",  then open the file "something/etc/Makeconf" and comment out the line starting with "FLIBS".  e.g. one might open the file  " /Library/Frameworks/R.framework/Versions/3.6/Resources/etc/Makeconf" and change the line "FLIBS =  -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm" to "#FLIBS =  -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath - lm"
+### Project overview
+
+`manyios` is an R data package (part of the [globalgov](https://github.com/globalgov) "many packages" ecosystem)
+on intergovernmental organisations in the international system across time.
+It ships two *datacubes*, each of which is a named list of related datasets
+that are cleaned into a common format so that `{manydata}` can compare and consolidate them:
+
+- `organizations`: the organisations themselves (`DIGO`, `IIGO`, `TRANSACCESS`, and others).
+- `memberships`: which state belongs to which organisation, and when (`COW_MEM`, `IIGO_MEM`, `MIGO`, and others).
+
+Division of labour to keep in mind when adding code:
+
+- `{manydata}`: the core package — discovering, comparing, and consolidating datacubes.
+- `{manypkgs}`: the tools for *building* a many package, and the conventions the tests here enforce.
+- `{manystates}`: state names and `stateID` coding, via `manystates::code_states()`.
+- `{manytreaties}`: treaty titles and `treatyID` coding, via `manytreaties::standardise_titles()`.
+- `{manyios}` (this package): the data on intergovernmental organisations, and `code_orgs()`.
+
+Almost all of the value of this package is in the data and in the scripts that prepare it,
+so the conventions below concern data more than functions.
+
+### Common commands
+
+This is a standard R package developed with `devtools`/`roxygen2`.
+Run these from an R console with the working directory set to the package root (or via `Rscript -e`).
+
+- Load package for interactive development: `devtools::load_all()`
+- Regenerate docs & NAMESPACE after editing roxygen comments: `devtools::document()`
+- Run full test suite: `devtools::test()`
+- Run a single test file: `devtools::test(filter = "IIGO")` (matches `test_IIGO.R`)
+- Full package check (mirrors CI): `devtools::check()` or `rcmdcheck::rcmdcheck()`
+- Lint: `lintr::lint_package()`
+- Spell check: `spelling::spell_check_package()`
+- Rebuild `README.md` from `README.Rmd`: `devtools::build_readme()`
+- Build pkgdown site locally: `pkgdown::build_site()`
+
+There is no non-R build system — no package.json/Makefile.
+Roxygen is configured with `markdown = TRUE`; `NAMESPACE` and all `man/*.Rd` files are generated — never hand-edit them.
+
+### File organization
+
+- `data/organizations.rda`, `data/memberships.rda` — the two datacubes. **Generated. Never edit these directly.**
+- `data-raw/<datacube>/<dataset>/` — one directory for each dataset, holding
+  the raw source file, a `<DATASET>.bib` citation, and a `prepare-<DATASET>.R` script that builds it.
+- `R/manyios-organizations.R`, `R/manyios-memberships.R` — roxygen documentation for the datacubes only.
+  The `@format` and `@source` sections are computed from the data at build time,
+  so they do not need updating when a dataset gains rows.
+- `R/code_orgs.R` — the one exported function.
+- `tests/testthat/` — see [Testing](#testing) above.
+
+### Preparing data
+
+To add or update a dataset:
+
+1. Put the raw source file in `data-raw/<datacube>/<dataset>/`, alongside a `.bib` entry for it.
+2. Write or edit `prepare-<DATASET>.R` in that directory.
+   Use `manypkgs::import_data()` to write the result into the datacube,
+   `manystates::code_states()` for state names, and `manytreaties::standardise_titles()` for treaty titles.
+3. Re-run the script. It rewrites the `.rda` file in `data/`.
+4. Run `devtools::test()`. The dataset test file enforces the many packages universe requirements.
+5. Add the dataset to the `reference:` index in `pkgdown/_pkgdown.yml` if it is a new datacube.
+
+Every step from the raw file to the released data must be reproducible from the script,
+so do not fix a value by hand — fix it in the script.
+
+### Website
+
+The site is built by `{pkgdown}` from [pkgdown/_pkgdown.yml](../pkgdown/_pkgdown.yml)
+and deployed from [pushrelease.yml](workflows/pushrelease.yml) on a merge to `main`.
+
+**Every exported function and datacube must appear in the `reference:` index.**
+A topic left out of it fails the build, so the site stops updating.
+A helper that users are not meant to call takes `@keywords internal` instead.
+
+Check before opening a PR:
+
+```r
+pkgdown::check_pkgdown()              # every topic is in the index
+pkgdown::build_site(preview = FALSE)  # everything else
+```
+
+### `NEWS.md` conventions
+
+The release notes on GitHub are taken from `NEWS.md`.
+[pushrelease.yml](workflows/pushrelease.yml) copies the `# manyios <version>` section verbatim,
+so a version without such a section releases with empty notes.
+[prchecks.yml](workflows/prchecks.yml) fails a PR that does not add one.
+
+Group each version's changes under `##` headings, each appearing at most once per version:
+`## Package` (package-wide, website, and infrastructure changes) first,
+then `## Data` (changes to the datacubes), then `## Functions`.
+
+Start each bullet with a verb matching the change type:
+
+- `Added ...` — new data or functionality
+- `Fixed ...` — bug fixes; if it relates to a GitHub issue, suffix with `(closing #123)`
+- `Renamed ... to ...` — dataset, variable, or function name migrations
+- `Improved ...` — functional updates to existing behaviour
+- `Updated ...` — documentation changes
+
+Keep every bullet to one line of fewer than 81 characters ideally.
+If a bullet wraps, it holds too much:
+shorten it, or split it into a lead bullet and sub-bullets indented by two spaces.
+Each bullet stands on its own, and states what changed,
+not why or how unless there is space for context.
+
+If a cited GitHub issue was **not** authored by @jhollway, thank the author with an `@`-tag in the bullet.
+
+### Branching and CI
+
+- `main` is the release branch; `develop` is the working branch (clone/work on `develop`).
+- PRs into `main` trigger [prchecks.yml](workflows/prchecks.yml): R CMD check (macOS/Windows/Linux), binary build, codecov, lintr, spell check, and PR metadata checks (DESCRIPTION version bump, a matching `NEWS.md` section, PR title/description conventions).
+- Merges/pushes to `main` trigger [pushrelease.yml](workflows/pushrelease.yml): check, auto-bump version tag, GitHub release with binaries and the `NEWS.md` section as release notes, then pkgdown site deploy. A failing check blocks the release and the deploy.

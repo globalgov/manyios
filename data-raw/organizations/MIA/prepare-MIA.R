@@ -15,7 +15,7 @@ MIA <- as_tibble(MIA) %>%
                 cowigoNR = ionumber) %>%
   dplyr::mutate(across(everything(), # ensure NAs coded correctly
                        ~stringr::str_replace_all(., "^NA$", NA_character_))) %>%
-  manydata::transmutate(Title = manypkgs::standardise_titles(ioname),
+  manydata::transmutate(Title = manytreaties::standardise_titles(ioname),
                         Beg = messydates::as_messydate(as.character(inception)),
                         Year = messydates::as_messydate(as.character(year))) %>%
   # initial and end variables refer to the first and last years that the IGO is recorded in the dataset respectively,

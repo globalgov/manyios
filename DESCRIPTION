@@ -1,7 +1,6 @@
 Package: manyios
 Title: Intergovernmental Organisations for manydata
-Version: 0.0.2
-Date: 2025-06-02
+Version: 0.1.0
 Description: manyios provides data on intergovernmental organisations in the international system across time. 
     The package combines and cross-references several existing datasets consistent with the manydata package aims.
 Authors@R: 
@@ -35,11 +34,15 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Remotes:
+    globalgov/manytreaties
 URL: https://github.com/globalgov/manyios
 BugReports: https://github.com/globalgov/manyios/issues
 Config/Needs/build: 
     roxygen2, 
-    devtools
+    devtools,
+    manystates,
+    manytreaties
 Config/Needs/check: 
     covr,
     lintr,

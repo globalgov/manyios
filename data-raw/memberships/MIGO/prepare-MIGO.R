@@ -4,7 +4,8 @@
 # ready for the many package.
 
 # Stage one: Collecting data
-MIGO <- haven::read_dta("data-raw/memberships/MIGO/informals_v3.dta")
+MIGO <- haven::read_dta("data-raw/memberships/MIGO/informals_v3.dta",
+                        encoding = "UTF-8")
 
 # Stage two: Correcting data
 # In this stage you will want to correct the variable names and
@@ -17,9 +18,8 @@ MIGO <- as_tibble(MIGO) %>%
                       values_to = "membership") %>%
   dplyr::filter(membership == 1|membership == 2|membership == 3) %>%
   manydata::transmutate(Year = messydates::as_messydate(year),
-                        StateName = manypkgs::standardise_titles(state_name)) %>%
-  dplyr::mutate(stateID = manypkgs::code_states(StateName, activity = F,
-                                                replace = "ID")) %>%
+                        StateName = manytreaties::standardise_titles(state_name)) %>%
+  dplyr::mutate(stateID = manystates::code_states(StateName)) %>%
   dplyr::group_by(StateName) %>%
   dplyr::mutate(Begin = dplyr::first(Year),
                 End = dplyr::last(Year)) %>%

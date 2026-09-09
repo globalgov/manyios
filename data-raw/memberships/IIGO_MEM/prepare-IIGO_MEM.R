@@ -15,14 +15,13 @@ IIGO_MEM <- readxl::read_excel("data-raw/organizations/IIGO/Coop_Under_Autonomy_
 # We recommend that you avoid using one letter variable names to keep
 # away from issues with ambiguous names down the road.
 IIGO_MEM <- as_tibble(IIGO_MEM) %>%
-  manydata::transmutate(Title = manypkgs::standardise_titles(`IIGO Name`)) %>%
+  manydata::transmutate(Title = manytreaties::standardise_titles(`IIGO Name`)) %>%
   dplyr::rename(igoID = Abbreviation) %>%
   dplyr::mutate(Year = messydates::as_messydate(as.character(2017))) %>%
   tidyr::pivot_longer("Afghanistan":"Zimbabwe",
                       names_to = "StateName", values_to = "member") %>%
   dplyr::filter(member == 1) %>%
-  dplyr::mutate(stateID = manypkgs::code_states(StateName, activity = FALSE,
-                                                replace = "ID"))
+  dplyr::mutate(stateID = manystates::code_states(StateName))
 
 IIGO <- manyios::organizations$IIGO %>%
   dplyr::select(igoID, Title, Beg, End)
