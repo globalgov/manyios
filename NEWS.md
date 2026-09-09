@@ -1,3 +1,22 @@
+# manyios 0.1.0
+
+## Package
+
+- Preparation scripts now call `manystates::code_states()` and `manytreaties::standardise_titles()`, 
+  since these functions have moved out of `{manypkgs}`
+
+## Data
+
+- Closed #18 by reading `informals_v3.dta` as UTF-8, 
+  which repairs the mis-decoded Sao Tome and Cote d'Ivoire state names in `memberships$MIGO`
+- Closed #18 by recoding `memberships$MIGO` with `manystates::code_states()`, 
+  which resolves the two missing `stateID` values and updates Algeria from `ALG` to `DZA`
+- Recoded `memberships$IIGO` with `manystates::code_states()`, 
+  which resolves the missing `stateID` for the Democratic Republic of the Congo, 
+  corrects the double match `GIN - GNQ` for Equatorial Guinea to `GNQ`, 
+  updates Algeria from `ALG` to `DZA`, 
+  and codes Yugoslavia as its successor `SRB`
+
 # manyios 0.0.2
 
 2025-06-02

@@ -17,13 +17,12 @@ COW_MEM <- readr::read_delim("data-raw/organizations/COW/igo_year_formatv3.csv",
 COW_MEM <- as_tibble(COW_MEM) %>%
   manydata::transmutate(igoID = ioname,
                         Year = messydates::as_messydate(as.character(year)),
-                        Title = manypkgs::standardise_titles(longorgname)) %>%
+                        Title = manytreaties::standardise_titles(longorgname)) %>%
   dplyr::rename(cowigoNR = ionum) %>%
   tidyr::pivot_longer("afghanistan":"zimbabwe",
                       names_to = "StateName", values_to = "member") %>%
   dplyr::filter(member == 1) %>%
-  dplyr::mutate(stateID = manypkgs::code_states(StateName, activity = FALSE,
-                                                replace = "ID"))
+  dplyr::mutate(stateID = manystates::code_states(StateName))
 # Get Beginning and End of states' membership
 Beg <- COW_MEM %>%
   dplyr::group_by(igoID, StateName) %>%
